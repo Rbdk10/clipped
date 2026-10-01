@@ -201,8 +201,12 @@ def render(script_path, out_path=None, voice=None, preview=False):
                     reader = None
                 v = draws[i][0]
                 img = segs[i].get("image")
+                img = img and os.path.join(os.path.dirname(script_path), img)
+                if img and not os.path.exists(img):
+                    print(f"warning: missing image {img}, using animated background", file=sys.stderr)
+                    img = None
                 if img:
-                    reader = StillPan(os.path.join(os.path.dirname(script_path), img), end - start, rnd)
+                    reader = StillPan(img, end - start, rnd)
                 elif v["type"] == "broll" and clips:
                     c = pick_broll(clips, v.get("tags"), used, rnd)
                     used.add(c["file"])
