@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-02",
+  "day": 4,
+  "series": "The City Case",
+  "title": "Deadline day, and the punishment could be weeks away",
+  "voice": "bm_george",
+  "speed": 1.22,
+  "segments": [
+    {"say": "Today is the deadline for Manchester City to appeal the biggest verdict in Premier League history.", "image": "hourglass.jpg",
+     "visual": {"type": "headline", "kicker": "Deadline day", "text": "City's appeal deadline is today"}, "source": "Sky Sports"},
+    {"say": "But the bigger story might be what comes after it.", "image": "hourglass.jpg",
+     "visual": {"type": "punch", "text": "But…", "color": "gold"}},
+    {"say": "Quick recap. On Tuesday, an independent commission found City broke Premier League rules on 114 of the 115 charges.",
+     "visual": {"type": "stat", "value": "114", "of": "115", "label": "charges upheld by the commission"}, "source": "Premier League, 29 Sep"},
+    {"say": "City deny any wrongdoing. They say they will appeal, and that the ruling contains clear errors.",
+     "visual": {"type": "quote", "text": "Clear material errors, of law, principle and fact", "who": "Manchester City statement"}, "source": "ESPN, 30 Sep"},
+    {"say": "Now, the punishment.", "image": "gavel.jpg",
+     "visual": {"type": "punch", "text": "The punishment", "color": "white"}},
+    {"say": "The Times reports the commission will hold a separate hearing to decide City's sanction, and it could come within weeks, not months.", "image": "gavel.jpg",
+     "visual": {"type": "headline", "kicker": "The Times reports", "urgent": false, "text": "Sanction hearing within weeks", "sub": "Not months, according to the report"}, "source": "The Times via CityXtra"},
+    {"say": "Under Premier League rules, the options include a fine, a points deduction, or other sporting sanctions.",
+     "visual": {"type": "list", "title": "On the table", "items": ["A fine", "A points deduction", "Other sporting sanctions"]}, "source": "Sky Sports"},
+    {"say": "For comparison, Everton lost 8 points in total, while Chelsea were fined £10.75m after reporting themselves.",
+     "visual": {"type": "versus", "left": {"label": "Everton", "text": "8 points"}, "right": {"label": "Chelsea", "text": "£10.75M fine"}}, "source": "Yahoo Sports"},
+    {"say": "So that's the road so far. Charged in 2023, verdict on Tuesday, appeal deadline today, and a punishment still to come.",
+     "visual": {"type": "timeline", "items": [["Feb 2023", "Charged"], ["Sep 2024", "Hearing starts"], ["29 Sep", "Verdict"], ["Today", "Appeal deadline"], ["Weeks?", "Sanction"]], "highlight": 3}},
+    {"say": "So what's fair? A big fine, or a points deduction? Tell me in the comments, and follow for Day 5 tomorrow.", "image": "stadium.jpg",
+     "visual": {"type": "headline", "kicker": "Your verdict", "urgent": false, "text": "Fine or points?", "sub": "Comment below. Follow for Day 5."}}
+  ],
+  "caption": "Man City 115 charges update, Day 4: today is City's appeal deadline, and The Times reports the sanctions hearing could come within weeks. Fine or points deduction? Sources: Premier League decision 29/09, Sky Sports, The Times. AI voiceover. Background images AI-generated.",
+  "hashtags": ["#mancity", "#115charges", "#premierleague", "#footballnews", "#appeal"],
+  "sources": [
+    {"name": "Yahoo Sports: what happens next / Friday 2 Oct deadline", "url": "https://sports.yahoo.com/articles/man-city-appeal-against-verdict-135918421.html"},
+    {"name": "CityXtra (citing The Times): sanctions hearing expected within weeks", "url": "https://cityxtra.co.uk/news/manchester-city-sanctions-hearing-expected-within-weeks-as-rivals-push-for-massive-points-deduction"},
+    {"name": "Sky Sports: charges explained, possible punishments", "url": "https://www.skysports.com/football/news/13591837/man-city-premier-league-charges-explained-what-are-they-what-could-punishment-be-what-happens-next"},
+    {"name": "ESPN: City to appeal", "url": "https://www.espn.com/soccer/story/_/id/50065250/man-city-appeal-guilty-verdict-premier-league-breaches-case"},
+    {"name": "Yahoo Sports: Everton and Chelsea precedents", "url": "https://sports.yahoo.com/articles/why-everton-punishment-wont-bode-061000855.html"}
+  ]
+}

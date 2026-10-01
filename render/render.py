@@ -73,6 +73,34 @@ class BrollReader:
         self.proc.kill()
 
 
+class StillPan:
+    """Ken Burns for a still image: cover-crop oversize, then pan a 9:16 window across it."""
+
+    def __init__(self, path, dur, rnd):
+        im = Image.open(path).convert("RGB")
+        scale = max(W * 1.18 / im.width, H * 1.18 / im.height)
+        im = im.resize((int(im.width * scale), int(im.height * scale)), Image.LANCZOS)
+        from PIL import ImageEnhance
+        self.im = ImageEnhance.Brightness(ImageEnhance.Color(im).enhance(0.9)).enhance(0.8)
+        self.dur = max(dur, 0.1)
+        mx, my = self.im.width - W, self.im.height - H
+        pts = [(0, 0), (mx, 0), (0, my), (mx, my), (mx // 2, 0), (mx // 2, my)]
+        self.a = rnd.choice(pts)
+        self.b = rnd.choice([p for p in pts if p != self.a])
+        self.t = 0
+
+    def frame(self):
+        k = min(max(self.t / self.dur, 0), 1)
+        k = k * k * (3 - 2 * k)  # smoothstep
+        x = self.a[0] + (self.b[0] - self.a[0]) * k
+        y = self.a[1] + (self.b[1] - self.a[1]) * k
+        self.t += 1 / FPS
+        return self.im.crop((int(x), int(y), int(x) + W, int(y) + H))
+
+    def close(self):
+        pass
+
+
 def pick_broll(clips, tags, used, rnd):
     tags = set(tags or [])
     pool = [c for c in clips if tags & set(c.get("tags", []))] or clips
@@ -172,7 +200,10 @@ def render(script_path, out_path=None, voice=None, preview=False):
                     reader.close()
                     reader = None
                 v = draws[i][0]
-                if v["type"] == "broll" and clips:
+                img = segs[i].get("image")
+                if img:
+                    reader = StillPan(os.path.join(os.path.dirname(script_path), img), end - start, rnd)
+                elif v["type"] == "broll" and clips:
                     c = pick_broll(clips, v.get("tags"), used, rnd)
                     used.add(c["file"])
                     reader = BrollReader(os.path.join(BROLL_DIR, c["file"]), end - start, rnd)
