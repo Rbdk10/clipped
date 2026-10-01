@@ -2,7 +2,7 @@
 
 Premier League v Manchester City, the "115 charges" case. The daily agent keeps this file current. Every fact needs a source link. Mark anything single-sourced or disputed.
 
-**Last updated:** 2026-10-01
+**Last updated:** 2026-10-02
 **Day counter:** Day 1 = Tue 29 Sep 2026, the day the verdict was published. So Day N = days since 28 Sep 2026.
 
 ## Where it stands now
@@ -10,6 +10,7 @@ Premier League v Manchester City, the "115 charges" case. The daily agent keeps 
   - The redacted decision PDF is dated 29/09/2026. [premierleague pulselive](https://resources.premierleague.pulselive.com/premierleague/document/2026/09/29/9bb3f063-6312-4d15-a1f1-77280d356a49/Premier-League-Manchester-City-independent-Commission-Redacted-Core-Decision.pdf)
   - *Unconfirmed:* which non-cooperation charge was not proven.
 - **Sanction:** NOT decided yet. The same commission sets it at a separate hearing. The range runs from a fine to a points deduction to expulsion. [CNN](https://www.cnn.com/2026/09/29/sport/premier-league-outlines-manchester-city-rules-breaches)
+  - *Reported by The Times (via [CityXtra](https://cityxtra.co.uk/news/manchester-city-sanctions-hearing-expected-within-weeks-as-rivals-push-for-massive-points-deduction)):* the sanctions hearing is expected "within weeks rather than months". This conflicts with the next item.
   - *Single source:* the sanction is expected "by the end of January" 2027. [CaughtOffside](https://www.caughtoffside.com/2026/10/01/manchester-city-punishment-decided-by-january/)
 - **Appeal:** City say they will appeal. The deadline is **Fri 2 Oct 2026**. [Inside World Football](https://www.insideworldfootball.com/2026/10/01/manchester-city-have-friday-deadline-to-initiate-appeal-against-epl-charges/)
   - As of 1 Oct the appeal is not confirmed as lodged.
