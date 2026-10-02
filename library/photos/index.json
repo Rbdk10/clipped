@@ -38,5 +38,105 @@
       0.5,
       0.5
     ]
+  },
+  {
+    "file": "etihad-787-landing-toronto-1.jpg",
+    "subject": "Etihad Airways Boeing 787-9 landing at Toronto Pearson, flight EY141 from Abu Dhabi",
+    "credit": "Steven He, public domain",
+    "license": "Public domain",
+    "license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Etihad_Airways_B787-9.jpg",
+    "focus": [
+      0.74,
+      0.52
+    ],
+    "zoom": 1.7,
+    "place": [
+      0.5,
+      0.6
+    ]
+  },
+  {
+    "file": "etihad-787-landing-toronto-2.jpg",
+    "subject": "Etihad Airways Boeing 787-9 landing at Toronto Pearson",
+    "credit": "Steven He, public domain",
+    "license": "Public domain",
+    "license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Etihad_Airways_B787-9_at_Toronto_Pearson_Int%27l_Airport.jpg",
+    "focus": [
+      0.22,
+      0.4
+    ],
+    "zoom": 1.7,
+    "place": [
+      0.5,
+      0.6
+    ]
+  },
+  {
+    "file": "premier-league-hq-brunel-building-2021.jpg",
+    "subject": "Brunel Building, Paddington: Premier League head office, 12 Sep 2021",
+    "credit": "Matt Brown, CC BY 2.0",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Brunel_Building,_Paddington_2021-09-12.jpg",
+    "focus": [
+      0.5,
+      0.32
+    ]
+  },
+  {
+    "file": "palace-of-westminster-night-2009.jpg",
+    "subject": "Palace of Westminster at night, 13 Mar 2009",
+    "credit": "Cristiano Betta, CC BY 2.0",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Palace_of_Westminster_at_night_2009-03-13.jpg",
+    "focus": [
+      0.72,
+      0.4
+    ]
+  },
+  {
+    "file": "etihad-stadium-dusk.jpg",
+    "subject": "Etihad Stadium at dusk",
+    "credit": "A Jean Genie, CC BY 4.0",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Etihad_night.jpg",
+    "focus": [
+      0.7,
+      0.4
+    ]
+  },
+  {
+    "file": "pep-guardiola-2021.jpg",
+    "subject": "Pep Guardiola, then Man City manager, RB Leipzig v Man City, 7 Dec 2021",
+    "credit": "Steffen Prößdorf, CC BY-SA 4.0",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Pep_Guardiola_2021.jpg",
+    "person": true,
+    "focus": [
+      0.55,
+      0.17
+    ],
+    "zoom": 1.15,
+    "place": [
+      0.74,
+      0.22
+    ]
+  },
+  {
+    "file": "palace-of-westminster-night-2009-river.jpg",
+    "subject": "Palace of Westminster at night, 13 Mar 2009",
+    "credit": "Cristiano Betta, CC BY 2.0",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Palace_of_Westminster_at_night_2009-03-13.jpg",
+    "focus": [
+      0.4,
+      0.55
+    ]
   }
 ]

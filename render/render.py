@@ -244,7 +244,7 @@ def render(script_path, out_path=None, voice=None, preview=False):
                     img = None
                 if img:
                     reader = StillPan(img, end - start, rnd, photo and photo.get("focus"), photo and photo.get("zoom"),
-                                      PHOTO_PLACE if photo and photo.get("person") else (0.5, 0.4))
+                                      photo.get("place", PHOTO_PLACE if photo.get("person") else (0.5, 0.4)) if photo else (0.5, 0.4))
                 elif v["type"] == "broll" and clips:
                     c = pick_broll(clips, v.get("tags"), used, rnd)
                     used.add(c["file"])

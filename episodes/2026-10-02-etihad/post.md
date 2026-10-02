@@ -9,7 +9,7 @@ Man City's biggest sponsor says it's considering legal action against the Premie
 ## Caption (paste into TikTok)
 
 ```
-Man City 115 charges update, Day 4 extra: City sponsor Etihad is considering legal action against the Premier League. The airline rejects any suggestion of improper deals and says the league never contacted it. Sources: Sky Sports, ESPN, ITV, Bloomberg. AI voiceover. Background images AI-generated.
+Man City 115 charges update, Day 4 extra: City sponsor Etihad is considering legal action against the Premier League. The airline rejects any suggestion of improper deals and says the league never contacted it. Sources: Sky Sports, ESPN, ITV, Bloomberg. AI voiceover. Photos: Arne Müseler, CC BY-SA 3.0 DE; Steven He, public domain; Matt Brown, CC BY 2.0; A Jean Genie, CC BY 4.0; Cristiano Betta, CC BY 2.0; Austrian Foreign Ministry/Dragan Tatic, CC BY 2.0; World Economic Forum, CC BY 3.0; Steffen Prößdorf, CC BY-SA 4.0.
 
 #mancity #115charges #premierleague #etihad #footballnews
 ```
@@ -27,3 +27,5 @@ Man City 115 charges update, Day 4 extra: City sponsor Etihad is considering leg
 - [AFP via Yahoo Finance: £900m, sham contracts](https://uk.finance.yahoo.com/news/man-city-sponsor-etihad-says-153317073.html)
 - [Bloomberg via Yahoo: UAE raised case with UK government (Feb 2025)](https://www.yahoo.com/news/man-city-troubles-spread-premier-060043234.html)
 - [AGBI: City case puts UAE-UK investment ties under scrutiny](https://www.agbi.com/business-of-sport/2026/09/manchester-city-case-puts-uae-uk-investment-ties-under-scrutiny/)
+- [WAM: Sheikh Mansour appointed UAE Vice President (Mar 2023)](https://www.wam.ae/en/article/hszrgrx0-breaking-with-approval-the-uae-federal-supreme)
+- [Mubadala: Khaldoon Al Mubarak, Managing Director and Group CEO](https://www.mubadala.com/en/who-we-are/board-of-directors/khaldoon-khalifa-al-mubarak)
