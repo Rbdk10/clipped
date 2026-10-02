@@ -24,3 +24,18 @@ Then use `{"type": "broll", "tags": ["stadium"], "text": "Short label"}` in a sc
 - Photoreal AI video of real people or places. It gets auto-labelled, and viewers can turn AI content down in their feed.
 
 Keep each clip under ~20 MB (1080p, ≤ 30 s) so the repo stays small. The cloud environment can't download from stock sites, so clips have to be committed here.
+
+# Photos of people and places (`photos/`)
+
+Freely licensed stills, mostly from Wikimedia Commons. Every file needs a record in `photos/index.json`:
+
+```json
+{"file": "khaldoon-al-mubarak-wef-2025.jpg", "subject": "…", "credit": "World Economic Forum, CC BY 3.0",
+ "license": "CC BY 3.0", "license_url": "…", "source": "https://commons.wikimedia.org/wiki/File:…",
+ "person": true, "focus": [0.45, 0.32], "zoom": 1.25}
+```
+
+- `credit` is shown on screen while the photo is up. Lint blocks a `photos/` image with no record.
+- `person: true` puts the face (`focus`, as fractions of the image) right of centre and keeps headline text to the left. `zoom` enlarges small faces.
+- Licences that are OK: public domain (including US government photos), CC0, CC BY. CC BY-SA is OK for places; prefer CC BY for people.
+- Check the original upload (e.g. Flickr) is from the real rights holder. A personal account re-posting an official photo as CC0 doesn't count.

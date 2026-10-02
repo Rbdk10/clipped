@@ -7,6 +7,9 @@ import re
 import sys
 
 from .scenes import SCENES
+from .photos import photo_records
+
+PHOTOS = photo_records()
 
 BANNED = [
     (r"\bcheat(s|ed|ing|ers?)?\b", "say 'found to have broken the rules'"),
@@ -40,6 +43,13 @@ def lint(script):
         types.append(t)
         if t not in SCENES:
             errors.append(f"segment {i}: unknown visual type {t!r}")
+        img = s.get("image") or ""
+        if img.startswith("photos/"):
+            rec = PHOTOS.get(img.split("/", 1)[1])
+            if not rec:
+                errors.append(f"segment {i}: {img} has no licence record in library/photos/index.json")
+            elif not rec.get("credit"):
+                errors.append(f"segment {i}: {img} has no credit line")
         n = len(s.get("say", "").split())
         if n > 30:
             warnings.append(f"segment {i}: {n} words, so one graphic sits too long; split it")

@@ -17,6 +17,11 @@ import numpy as np
 from PIL import Image, ImageDraw
 
 from . import lint, post, scenes, tts
+from .photos import PHOTO_DIR, photo_record
+
+# Photos of people: the face sits right of centre and headline text keeps to the left of it.
+PHOTO_PLACE = (0.76, 0.48)
+PHOTO_TEXT_W = 560
 from .scenes import H, W
 
 FPS = 30
@@ -76,17 +81,26 @@ class BrollReader:
 class StillPan:
     """Ken Burns for a still image: cover-crop oversize, then pan a 9:16 window across it."""
 
-    def __init__(self, path, dur, rnd):
+    def __init__(self, path, dur, rnd, focus=None, zoom=None, place=(0.5, 0.4)):
         im = Image.open(path).convert("RGB")
-        scale = max(W * 1.18 / im.width, H * 1.18 / im.height)
+        over = zoom or (1.08 if focus else 1.18)
+        scale = max(W * over / im.width, H * over / im.height)
         im = im.resize((int(im.width * scale), int(im.height * scale)), Image.LANCZOS)
         from PIL import ImageEnhance
         self.im = ImageEnhance.Brightness(ImageEnhance.Color(im).enhance(0.9)).enhance(0.8)
         self.dur = max(dur, 0.1)
         mx, my = self.im.width - W, self.im.height - H
-        pts = [(0, 0), (mx, 0), (0, my), (mx, my), (mx // 2, 0), (mx // 2, my)]
-        self.a = rnd.choice(pts)
-        self.b = rnd.choice([p for p in pts if p != self.a])
+        if focus:
+            # slow push across the subject, which lands at `place` in the frame
+            cx = min(max(focus[0] * self.im.width - W * place[0], 0), mx)
+            cy = min(max(focus[1] * self.im.height - H * place[1], 0), my)
+            dx, dy = min(mx, 60) / 2, min(my, 40) / 2
+            self.a = (min(max(cx - dx, 0), mx), min(max(cy - dy, 0), my))
+            self.b = (min(max(cx + dx, 0), mx), min(max(cy + dy, 0), my))
+        else:
+            pts = [(0, 0), (mx, 0), (0, my), (mx, my), (mx // 2, 0), (mx // 2, my)]
+            self.a = rnd.choice(pts)
+            self.b = rnd.choice([p for p in pts if p != self.a])
         self.t = 0
 
     def frame(self):
@@ -174,12 +188,25 @@ def render(script_path, out_path=None, voice=None, preview=False):
     for y in range(H):
         a = int(150 * max(0.0, 1 - abs(y - 900) / 900) + 40)
         sd.line([(0, y), (W, y)], fill=(0, 0, 0, a))
+    # photos of people: dark on the left behind the text, light over the face on the right
+    shade_person = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    sp = ImageDraw.Draw(shade_person)
+    for x in range(W):
+        sp.line([(x, 0), (x, H)], fill=(0, 0, 0, int(40 + 175 * (1 - x / W) ** 1.6)))
+    band = Image.new("RGBA", (W, H), (0, 0, 0, 0))  # keep the caption band and source lines readable
+    bd = ImageDraw.Draw(band)
+    for y in range(1150, 1560):
+        bd.line([(0, y), (W, y)], fill=(0, 0, 0, int(110 * (1 - abs(y - 1355) / 205))))
+    shade_person.alpha_composite(band)
 
     draws = []
     for s in segs:
         v = dict(s.get("visual") or {"type": "headline", "text": s["say"][:60]})
         if v["type"] == "broll" and not clips:
             v = {"type": "headline", "text": v.get("text") or v.get("fallback") or "", "kicker": v.get("kicker", "LATEST")}
+        photo = photo_record(s.get("image"))
+        if photo and photo.get("person") and v["type"] == "headline":
+            v = {**v, "width": PHOTO_TEXT_W}  # keep the text left of the face
         draws.append((v, scenes.SCENES[v["type"]](v)))
 
     with tempfile.TemporaryDirectory() as tmp:
@@ -209,12 +236,15 @@ def render(script_path, out_path=None, voice=None, preview=False):
                     reader = None
                 v = draws[i][0]
                 img = segs[i].get("image")
-                img = img and os.path.join(os.path.dirname(script_path), img)
+                photo = photo_record(img)
+                img = img and (os.path.join(PHOTO_DIR, photo["file"]) if photo
+                               else os.path.join(os.path.dirname(script_path), img))
                 if img and not os.path.exists(img):
                     print(f"warning: missing image {img}, using animated background", file=sys.stderr)
                     img = None
                 if img:
-                    reader = StillPan(img, end - start, rnd)
+                    reader = StillPan(img, end - start, rnd, photo and photo.get("focus"), photo and photo.get("zoom"),
+                                      PHOTO_PLACE if photo and photo.get("person") else (0.5, 0.4))
                 elif v["type"] == "broll" and clips:
                     c = pick_broll(clips, v.get("tags"), used, rnd)
                     used.add(c["file"])
@@ -223,11 +253,12 @@ def render(script_path, out_path=None, voice=None, preview=False):
             if frame is None:
                 frame = bg.frame(t)
             frame = frame.convert("RGBA") if frame.mode != "RGBA" else frame.copy()
+            photo = reader and photo_record(segs[i].get("image"))
             if reader:
-                frame.alpha_composite(shade)
+                frame.alpha_composite(shade_person if photo and photo.get("person") else shade)
             v, draw = draws[i]
             draw(frame, t - start, end - start)
-            chrome.draw(frame, t, total, segs[i].get("source"))
+            chrome.draw(frame, t, total, segs[i].get("source"), photo and photo["credit"])
             captions.draw(frame, t)
             if i and t - start < 0.07:  # cut flash
                 frame = Image.blend(frame, Image.new("RGBA", (W, H), (255, 255, 255, 255)), 0.35)

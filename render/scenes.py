@@ -149,11 +149,12 @@ def text_layer(lines, fnt, size, fill, spacing=1.08, align="left", width=None, s
 
 def scene_headline(v):
     kicker = pill(v.get("kicker", "LATEST").upper(), font("bold", 38), WHITE, RED if v.get("urgent", True) else NAVY2)
-    f, lines, size = fit_text(v["text"].upper(), "display", SAFE_R - SAFE_L, 560, 150, spacing=1.04)
+    width = v.get("width", SAFE_R - SAFE_L)
+    f, lines, size = fit_text(v["text"].upper(), "display", width, 560, 150, spacing=1.04)
     body = text_layer(lines, f, size, WHITE, spacing=1.04)
     sub = None
     if v.get("sub"):
-        sf, sl, ss = fit_text(v["sub"], "body", SAFE_R - SAFE_L, 150, 46)
+        sf, sl, ss = fit_text(v["sub"], "body", width, 150, 46)
         sub = text_layer(sl, sf, ss, GREY, spacing=1.2)
     total_h = kicker.height + 30 + body.height + (sub.height + 24 if sub else 0)
     top = CARD_TOP + (CARD_BOTTOM - CARD_TOP - total_h) // 2
@@ -353,7 +354,7 @@ class Chrome:
         self.badge = pill(f"{series.upper()}  •  DAY {day}", font("bold", 34), NAVY, WHITE)
         self.src_font = font("body", 30)
 
-    def draw(self, fr, t, total, source=None):
+    def draw(self, fr, t, total, source=None, credit=None):
         d = ImageDraw.Draw(fr)
         d.rectangle([0, 0, W, 10], fill=(255, 255, 255, 40))
         d.rectangle([0, 0, int(W * t / total), 10], fill=SKY)
@@ -361,6 +362,8 @@ class Chrome:
         if source:
             txt = f"Source: {source}"
             d.text((SAFE_L, 1440), txt, font=self.src_font, fill=GREY)
+        if credit:
+            d.text((SAFE_L, 1480 if source else 1440), f"Photo: {credit}", font=self.src_font, fill=GREY)
 
 
 class Captions:

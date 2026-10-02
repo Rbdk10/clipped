@@ -1,0 +1,42 @@
+[
+  {
+    "file": "khaldoon-al-mubarak-wef-2025.jpg",
+    "subject": "Khaldoon al-Mubarak, Man City chairman and Mubadala CEO, at the World Economic Forum, Davos, 21 Jan 2025",
+    "credit": "World Economic Forum, CC BY 3.0",
+    "license": "CC BY 3.0",
+    "license_url": "https://creativecommons.org/licenses/by/3.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Khaldoon_Al_Mubarak.png",
+    "focus": [
+      0.45,
+      0.32
+    ],
+    "person": true,
+    "zoom": 1.25
+  },
+  {
+    "file": "sheikh-mansour-abu-dhabi-2013.jpg",
+    "subject": "Sheikh Mansour bin Zayed Al Nahyan, Man City owner and UAE Vice President, Abu Dhabi, 13 Feb 2013",
+    "credit": "Austrian Foreign Ministry/Dragan Tatic, CC BY 2.0",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:AM_Spindelegger_in_Abu_Dhabi_(8469568137).jpg",
+    "focus": [
+      0.83,
+      0.36
+    ],
+    "zoom": 1.45,
+    "person": true
+  },
+  {
+    "file": "etihad-stadium-aerial-2023.jpg",
+    "subject": "Aerial view of the Etihad Stadium (City of Manchester Stadium), 31 Jul 2023",
+    "credit": "Arne Müseler, CC BY-SA 3.0 DE",
+    "license": "CC BY-SA 3.0 DE",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:City_of_Manchester_Stadium_2023_cropped.jpg",
+    "focus": [
+      0.5,
+      0.5
+    ]
+  }
+]

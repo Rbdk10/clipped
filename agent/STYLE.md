@@ -55,7 +55,11 @@ The case is under appeal. Write every claim so it would survive a lawyer reading
 Rules:
 - Use at least one `stat` and one `punch` per episode.
 - Don't open with the same visual type two days running (check yesterday's script).
-- No club crests, logos, Premier League footage, screenshots of articles, or photos of people. The graphics are ours, and that's what keeps the account "original" in TikTok's eyes.
+- No club crests, logos, Premier League footage or screenshots of articles. The graphics are ours, and that's what keeps the account "original" in TikTok's eyes.
+- **Photos of real people only from `library/photos/`** (public domain or CC licences that allow commercial use, each with a licence record). Use `"image": "photos/<file>"`; the renderer adds the "Photo: …" credit and puts the face beside the headline.
+  - A person appears only while the narration names them or is about them. Never put someone behind a line about breaches they aren't personally accused of (no Pep behind "114 of 115 charges").
+  - Never use press-agency photos (Getty, PA, Reuters, AP) or AI-generated images of real people.
+  - When you use a library photo, list its credit in the caption: "Photos: …".
 - On-screen text should not just repeat the voiceover. Make it the headline version: 2–6 words.
 - Every factual segment gets a short `source` ("Sky Sports, 1 Oct").
 
