@@ -6,12 +6,14 @@
   "day": 3,                      // days since 28 Sep 2026
   "series": "The City Case",     // badge text (optional)
   "title": "City's appeal plan revealed",
-  "voice": "bm_george",          // Kokoro voice: bm_george | bm_lewis | bm_daniel | bm_fable | bf_emma …
-  "speed": 1.22,                 // 1.15–1.3 sounds natural
+  "elevenlabs": {"voice_id": "onwK4e9ZLuTAKqWW03F9", "speed": 1.08},  // optional overrides (default voice: Daniel)
+  "voice": "bm_george",          // Kokoro fallback voice: bm_george | bm_lewis | bm_daniel | bm_fable …
+  "speed": 1.22,                 // Kokoro speed; 1.15–1.3 sounds natural
   "segments": [
     {
       "say": "Narration for this beat. Written the way it should appear in captions.",
       "visual": { "type": "headline", ... },
+      "image": "stadium.jpg",          // optional still background in the episode folder (slow pan, darkened)
       "source": "Sky Sports, 1 Oct"   // optional on-screen source line
     }
   ],

@@ -20,7 +20,16 @@ I researched this before building (sources in the session notes):
 - **Videos run over 61 s,** because TikTok's Creator Rewards only pay on videos longer than a minute.
 
 ## Voice
-[Kokoro](https://github.com/thewh1teagle/kokoro-onnx) runs locally. It's free, Apache-2.0 licensed (fine for monetised videos) and needs no API key. The default voice is `bm_george`, a British male; `bm_lewis`, `bm_daniel` and `bm_fable` are alternatives. Set `"voice"` in a script to change it. Because the voice is AI, **turn on TikTok's AI-generated label** when you post.
+**ElevenLabs** is the main voice. The default is "Daniel", a steady British news-presenter voice, using `eleven_multilingual_v2`.
+- Its timestamp endpoint gives exact word timings, so the captions sync perfectly.
+- Each segment's audio is cached in `episodes/<date>/voice/`, so re-renders don't spend credits.
+- Each episode uses about 1,000 characters. Daily, that's about 30k a month: right at the Starter plan's limit, so use Creator (100k) for headroom.
+- ElevenLabs needs `ELEVENLABS_API_KEY` set and `api.elevenlabs.io` allowed in the environment's network settings.
+- To change the voice per episode, add `"elevenlabs": {"voice_id": "...", "speed": 1.1}` to the script.
+
+When there's no key, it falls back to **Kokoro** "George" (offline, free, Apache-2.0). Set `CLIPPED_TTS=kokoro` to force it.
+
+Because the voice is AI, **turn on TikTok's AI-generated label** when you post.
 
 ## Run it by hand
 ```bash

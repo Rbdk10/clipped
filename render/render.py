@@ -142,7 +142,15 @@ def render(script_path, out_path=None, voice=None, preview=False):
     rnd = random.Random(script.get("date", "") + str(day))
     theme = THEMES[day % len(THEMES)]
 
-    audio, words, bounds = tts.synthesize([s["say"] for s in segs],
+    engine = os.environ.get("CLIPPED_TTS") or ("elevenlabs" if tts.eleven_available() else "kokoro")
+    if engine == "elevenlabs":
+        audio, words, bounds = tts.synthesize_eleven(
+            [s["say"] for s in segs], os.path.join(os.path.dirname(script_path), "voice"),
+            script.get("elevenlabs"))
+    else:
+        if os.environ.get("CLIPPED_TTS") != "kokoro":
+            print("warning: ELEVENLABS_API_KEY not set, using the Kokoro voice", file=sys.stderr)
+        audio, words, bounds = tts.synthesize([s["say"] for s in segs],
                                           voice=voice or script.get("voice", "bm_george"),
                                           speed=script.get("speed", 1.12))
     sr = tts.SR
@@ -231,7 +239,7 @@ def render(script_path, out_path=None, voice=None, preview=False):
     if enc.returncode:
         raise SystemExit(f"ffmpeg failed ({enc.returncode})")
 
-    meta = {"duration": round(total, 2), "words": len(words), "render_seconds": round(time.time() - t0, 1),
+    meta = {"voice": engine, "duration": round(total, 2), "words": len(words), "render_seconds": round(time.time() - t0, 1),
             "segments": [[round(a, 2), round(b, 2)] for a, b in bounds]}
     print(json.dumps(meta))
     return meta

@@ -1,11 +1,20 @@
-"""Narration: Kokoro (offline, Apache-2.0) with per-word timings for captions.
+"""Narration with per-word timings for captions.
 
-Kokoro doesn't return word timestamps, so each sentence is synthesised on its
-own (exact sentence boundaries) and words inside a sentence are spread by a
-length-based weight. Good enough for 1-3 word caption chunks.
+Two engines:
+- ElevenLabs (default when ELEVENLABS_API_KEY is set): /with-timestamps gives
+  character-level timings, so captions are exact. Audio is cached per segment in
+  the episode's voice/ folder so re-renders don't spend credits.
+- Kokoro (offline, Apache-2.0) fallback. It has no timestamps, so each sentence
+  is synthesised alone and words are spread inside it by a length-based weight.
 """
+import base64
+import hashlib
+import json
 import os
 import re
+import subprocess
+import sys
+import urllib.request
 from dataclasses import dataclass
 
 import numpy as np
@@ -50,9 +59,14 @@ _SPOKEN = [
 
 
 def spoken_form(text):
+    # Token by token, so each caption word maps to a known run of spoken words.
+    return " ".join(_spoken_token(t) for t in text.split())
+
+
+def _spoken_token(tok):
     for pat, rep in _SPOKEN:
-        text = re.sub(pat, rep, text)
-    return text
+        tok = re.sub(pat, rep, tok)
+    return tok
 
 
 def _weight(word):
@@ -100,3 +114,102 @@ def synthesize(segments, voice="bm_george", speed=1.12, gap=0.12, seg_gap=0.22):
         bounds.append((seg_start, t))
     audio = np.concatenate(chunks) if chunks else np.zeros(SR, np.float32)
     return audio, words, bounds
+
+
+# --------------------------------------------------------------------------
+# ElevenLabs
+
+ELEVEN_URL = "https://api.elevenlabs.io/v1/text-to-speech/{voice}/with-timestamps?output_format=mp3_44100_128"
+ELEVEN_DEFAULTS = {
+    "voice_id": "onwK4e9ZLuTAKqWW03F9",   # "Daniel": British, steady news-presenter delivery
+    "model_id": "eleven_multilingual_v2",
+    "stability": 0.45,
+    "similarity_boost": 0.8,
+    "style": 0.25,
+    "speed": 1.08,
+}
+
+
+def eleven_available():
+    return bool(os.environ.get("ELEVENLABS_API_KEY"))
+
+
+def _eleven_call(text, prev_text, next_text, cfg):
+    body = {
+        "text": text,
+        "model_id": cfg["model_id"],
+        "voice_settings": {k: cfg[k] for k in ("stability", "similarity_boost", "style", "speed")}
+                          | {"use_speaker_boost": True},
+    }
+    if prev_text:
+        body["previous_text"] = prev_text
+    if next_text:
+        body["next_text"] = next_text
+    req = urllib.request.Request(ELEVEN_URL.format(voice=cfg["voice_id"]), data=json.dumps(body).encode(),
+                                 headers={"xi-api-key": os.environ["ELEVENLABS_API_KEY"],
+                                          "Content-Type": "application/json"})
+    with urllib.request.urlopen(req, timeout=120) as r:
+        return json.load(r)
+
+
+def _decode_mp3(data):
+    out = subprocess.run(["ffmpeg", "-v", "error", "-i", "-", "-f", "f32le", "-ac", "1", "-ar", str(SR), "-"],
+                         input=data, capture_output=True, check=True).stdout
+    return np.frombuffer(out, dtype=np.float32).copy()
+
+
+def _spoken_words(chars, starts, ends):
+    """Group character timings into (word, start, end) for the spoken text."""
+    out, cur, cs = [], "", None
+    for c, a, b in zip(chars, starts, ends):
+        if c.isspace():
+            if cur:
+                out.append((cur, cs, last))
+            cur, cs = "", None
+            continue
+        if cs is None:
+            cs = a
+        cur += c
+        last = b
+    if cur:
+        out.append((cur, cs, last))
+    return out
+
+
+def synthesize_eleven(segments, cache_dir, cfg=None, seg_gap=0.22):
+    cfg = {**ELEVEN_DEFAULTS, **(cfg or {})}
+    os.makedirs(cache_dir, exist_ok=True)
+    chunks, words, bounds = [], [], []
+    t = 0.0
+    spoken = [spoken_form(s) for s in segments]
+    for si, seg in enumerate(segments):
+        text = spoken[si]
+        key = hashlib.sha1(json.dumps([text, cfg], sort_keys=True).encode()).hexdigest()[:16]
+        mp3, meta = os.path.join(cache_dir, key + ".mp3"), os.path.join(cache_dir, key + ".json")
+        if not (os.path.exists(mp3) and os.path.exists(meta)):
+            res = _eleven_call(text, spoken[si - 1] if si else None,
+                               spoken[si + 1] if si + 1 < len(spoken) else None, cfg)
+            with open(mp3, "wb") as f:
+                f.write(base64.b64decode(res["audio_base64"]))
+            with open(meta, "w") as f:
+                json.dump(res["alignment"], f)
+            print(f"elevenlabs: segment {si + 1} ({len(text)} chars)", file=sys.stderr)
+        with open(mp3, "rb") as f:
+            audio = _decode_mp3(f.read())
+        with open(meta) as f:
+            al = json.load(f)
+        sw = _spoken_words(al["characters"], al["character_start_times_seconds"], al["character_end_times_seconds"])
+        # map caption tokens onto spoken words (one token can be several spoken words, e.g. £830m)
+        j = 0
+        for tok in seg.split():
+            n = max(len(_spoken_token(tok).split()), 1)
+            run = sw[j:j + n] or sw[-1:]
+            words.append(Word(tok, t + run[0][1], t + run[-1][2]))
+            j += n
+        bounds.append((t, t + len(audio) / SR + (seg_gap if si < len(segments) - 1 else 0)))
+        chunks.append(audio)
+        t += len(audio) / SR
+        if si < len(segments) - 1:
+            chunks.append(np.zeros(int(seg_gap * SR), np.float32))
+            t += seg_gap
+    return np.concatenate(chunks), words, bounds

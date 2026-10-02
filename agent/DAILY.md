@@ -43,6 +43,7 @@ python3 -m render.render episodes/<date>/script.json
 ```
 This writes `video.mp4`, `frames.jpg` (one frame per segment) and `post.md`. It prints the duration.
 
+- **Voice:** the output's `"voice"` field says `elevenlabs` or `kokoro`. If it fell back to Kokoro, say so in your report.
 - **Duration under 61 s:** add a sentence, then re-render. **Over 80 s:** trim.
 - **Look at `frames.jpg` with the Read tool:** check for text cut off, overlapping, or off-screen. Fix the script (shorter on-screen text) and re-render if anything is wrong.
 
@@ -52,7 +53,7 @@ This writes `video.mp4`, `frames.jpg` (one frame per segment) and `post.md`. It 
 
 ## 7. Commit and push
 ```bash
-git add episodes/<date> case/
+git add episodes/<date> case/   # includes episodes/<date>/voice/ (cached ElevenLabs audio)
 git commit -m "Day N: <title>"
 git push -u origin HEAD
 ```
