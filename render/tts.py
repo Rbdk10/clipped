@@ -121,12 +121,12 @@ def synthesize(segments, voice="bm_george", speed=1.12, gap=0.12, seg_gap=0.22):
 
 ELEVEN_URL = "https://api.elevenlabs.io/v1/text-to-speech/{voice}/with-timestamps?output_format=mp3_44100_128"
 ELEVEN_DEFAULTS = {
-    "voice_id": "onwK4e9ZLuTAKqWW03F9",   # "Daniel": British, steady news-presenter delivery
+    "voice_id": "fhWgCDAdAXgPVl5ls9uP",   # "Matthew": British news/sport reader; fastest and least monotone of 8 tested (2026-10-01)
     "model_id": "eleven_multilingual_v2",
     "stability": 0.45,
     "similarity_boost": 0.8,
     "style": 0.25,
-    "speed": 1.08,
+    "speed": 1.0,   # Matthew is quick; at 1.08 Day 4 ran 58.7 s, under TikTok's 61 s Creator Rewards line
 }
 
 

@@ -6,7 +6,7 @@
   "day": 3,                      // days since 28 Sep 2026
   "series": "The City Case",     // badge text (optional)
   "title": "City's appeal plan revealed",
-  "elevenlabs": {"voice_id": "onwK4e9ZLuTAKqWW03F9", "speed": 1.08},  // optional overrides (default voice: Daniel)
+  "elevenlabs": {"voice_id": "fhWgCDAdAXgPVl5ls9uP", "speed": 1.0},  // optional overrides (default voice: Matthew)
   "voice": "bm_george",          // Kokoro fallback voice: bm_george | bm_lewis | bm_daniel | bm_fable …
   "speed": 1.22,                 // Kokoro speed; 1.15–1.3 sounds natural
   "segments": [

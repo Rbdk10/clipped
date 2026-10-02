@@ -3,7 +3,7 @@
 The audience is UK football fans scrolling TikTok. They give you about 2 seconds. Write like a sharp Sky Sports News presenter talking to a mate: punchy and clear, never shouty.
 
 ## Length
-- **165–195 words → 62–72 seconds.** The video must be **over 61 s**, because TikTok's Creator Rewards Program only pays on videos over 1 minute. Don't go over 80 s.
+- **170–200 words → 62–72 seconds** with the Matthew voice (~2.8 words/s; 160 words came out at 59 s). The video must be **over 61 s**, because TikTok's Creator Rewards Program only pays on videos over 1 minute. Don't go over 80 s.
 - **9–13 segments.** Each segment is 1–2 sentences and gets its own graphic, so the picture changes every 3–7 s. A segment over ~25 words means one graphic sits too long; split it.
 - Sentences of 6–14 words, one fact per sentence. Use contractions.
 

@@ -20,7 +20,7 @@ I researched this before building (sources in the session notes):
 - **Videos run over 61 s,** because TikTok's Creator Rewards only pay on videos longer than a minute.
 
 ## Voice
-**ElevenLabs** is the main voice. The default is "Daniel", a steady British news-presenter voice, using `eleven_multilingual_v2`.
+**ElevenLabs** is the main voice. The default is "Matthew", a British voice from the ElevenLabs library made for news reading and sports commentary, using `eleven_multilingual_v2`. Of the 8 British male voices tested on 2026-10-01, he read the fastest (~190 wpm, which suits short-form) and had the most pitch variation, so he sounds least monotone. Christopher (`G17SuINrv2H9FC6nvetn`) is the runner-up.
 - Its timestamp endpoint gives exact word timings, so the captions sync perfectly.
 - Each segment's audio is cached in `episodes/<date>/voice/`, so re-renders don't spend credits.
 - Each episode uses about 1,000 characters. Daily, that's about 30k a month: right at the Starter plan's limit, so use Creator (100k) for headroom.

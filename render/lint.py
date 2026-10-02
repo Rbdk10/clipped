@@ -27,10 +27,10 @@ def lint(script):
         if key not in script:
             errors.append(f"missing '{key}'")
     words = sum(len(s.get("say", "").split()) for s in segs)
-    if words < 155:
-        errors.append(f"{words} words: too short for 61s+ (aim 165-195)")
+    if words < 165:
+        errors.append(f"{words} words: too short for 61s+ (aim 170-200)")
     elif words > 215:
-        errors.append(f"{words} words: too long (aim 165-195)")
+        errors.append(f"{words} words: too long (aim 170-200)")
     if not 8 <= len(segs) <= 14:
         warnings.append(f"{len(segs)} segments (aim 9-13)")
     types = []

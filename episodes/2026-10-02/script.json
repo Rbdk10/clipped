@@ -22,12 +22,12 @@
      "visual": {"type": "list", "title": "On the table", "items": ["A fine", "A points deduction", "Other sporting sanctions"]}, "source": "Sky Sports"},
     {"say": "For comparison, Everton lost 8 points in total, while Chelsea were fined £10.75m after reporting themselves.",
      "visual": {"type": "versus", "left": {"label": "Everton", "text": "8 points"}, "right": {"label": "Chelsea", "text": "£10.75M fine"}}, "source": "Yahoo Sports"},
-    {"say": "So that's the road so far. Charged in 2023, verdict on Tuesday, appeal deadline today, and a punishment still to come.",
+    {"say": "So that's the road so far. Charged in February 2023, a hearing that started in September 2024, verdict on Tuesday, appeal deadline today, and a punishment still to come.",
      "visual": {"type": "timeline", "items": [["Feb 2023", "Charged"], ["Sep 2024", "Hearing starts"], ["29 Sep", "Verdict"], ["Today", "Appeal deadline"], ["Weeks?", "Sanction"]], "highlight": 3}},
-    {"say": "So what's fair? A big fine, or a points deduction? Tell me in the comments, and follow for Day 5 tomorrow.", "image": "stadium.jpg",
+    {"say": "So what's fair? A big fine, or a points deduction? Tell me in the comments, and follow so you don't miss Day 5 tomorrow.", "image": "stadium.jpg",
      "visual": {"type": "headline", "kicker": "Your verdict", "urgent": false, "text": "Fine or points?", "sub": "Comment below. Follow for Day 5."}}
   ],
-  "caption": "Man City 115 charges update, Day 4: today is City's appeal deadline, and The Times reports the sanctions hearing could come within weeks. Fine or points deduction? Sources: Premier League decision 29/09, Sky Sports, The Times. AI voiceover. Background images AI-generated.",
+  "caption": "Man City 115 charges update, Day 4: today is City's appeal deadline, and The Times reports the sanctions hearing could come within weeks. Fine or points deduction? Sources: Premier League decision 29/09, Sky Sports, The Times. AI voiceover.",
   "hashtags": ["#mancity", "#115charges", "#premierleague", "#footballnews", "#appeal"],
   "sources": [
     {"name": "Yahoo Sports: what happens next / Friday 2 Oct deadline", "url": "https://sports.yahoo.com/articles/man-city-appeal-against-verdict-135918421.html"},
