@@ -9,7 +9,7 @@ Today is the deadline for Manchester City to appeal the biggest verdict in Premi
 ## Caption (paste into TikTok)
 
 ```
-Man City 115 charges update, Day 4: today is City's appeal deadline, and The Times reports the sanctions hearing could come within weeks. Fine or points deduction? Sources: Premier League decision 29/09, Sky Sports, The Times. AI voiceover.
+Man City 115 charges update, Day 4: today is City's appeal deadline, and The Times reports the sanctions hearing could come within weeks. Fine or points deduction? Sources: Premier League decision 29/09, Sky Sports, The Times. AI voiceover. Background images AI-generated.
 
 #mancity #115charges #premierleague #footballnews #appeal
 ```
