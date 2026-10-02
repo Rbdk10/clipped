@@ -8,7 +8,8 @@ Branch: `claude/serene-hamilton-1nrysy`. Read README.md, agent/DAILY.md and agen
 - Day 3 (1 Oct) and Day 4 (2 Oct) episodes are in `episodes/`.
 - Day 4 was also rendered with 3 Higgsfield background images (stadium, gavel, hourglass). That version is in the user's Higgsfield library as `city-case-day4.mp4`.
   - Segments can now set `"image"`; the renderer pans across it.
-- ElevenLabs narration is implemented (`render/tts.py`, voice "Daniel", exact word timings, audio cached in `episodes/<date>/voice/`).
+- ElevenLabs narration is implemented (`render/tts.py`, exact word timings, audio cached in `episodes/<date>/voice/`). The default voice is now **Matthew** (see README), and the word target is 170–200.
+- Done locally (1 Oct): Day 4 re-rendered with ElevenLabs/Matthew, 66.5 s, still without the Higgsfield images. The key is in the local vault as `ELEVENLABS_API_KEY` (`secret run ELEVENLABS_API_KEY -- python3 -m render.render ...`).
   - It isn't active yet: there's no key and no network access in the cloud environment.
 
 ## To do now: send this to FRIDAY
