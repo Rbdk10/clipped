@@ -138,5 +138,27 @@
       0.4,
       0.55
     ]
+  },
+  {
+    "file": "erling-haaland-2023.jpg",
+    "subject": "Erling Haaland, Man City striker, warming up before RB Leipzig v Man City, UEFA Champions League, 4 Oct 2023",
+    "credit": "Steffen Prößdorf, CC BY-SA 4.0",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:2023-10-04_Fu%C3%9Fball,_M%C3%A4nner,_UEFA_Champions_League,_RB_Leipzig_-_Manchester_City_FC_1DX_2616.jpg",
+    "person": true,
+    "focus": [
+      0.32,
+      0.36
+    ],
+    "zoom": 1.08
+  },
+  {
+    "file": "old-trafford-2023.jpg",
+    "subject": "Old Trafford, Manchester United's stadium, aerial view, 31 Jul 2023",
+    "credit": "Arne Müseler, CC BY-SA 3.0 DE",
+    "license": "CC BY-SA 3.0 DE",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Manchester_United_Old_Trafford.jpg"
   }
 ]

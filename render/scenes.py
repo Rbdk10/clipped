@@ -347,10 +347,11 @@ def stamp(text, fnt, col, angle=-8, pad=(22, 10), border=6):
 def scene_rumour(v):
     """Opening hook: the rumour, who's saying it, and an UNCONFIRMED stamp."""
     kicker = pill("THE RUMOUR", font("bold", 40), NAVY, GOLD)
-    f, lines, size = fit_text(v["text"].upper(), "display", SAFE_R - SAFE_L, 480, 140, spacing=1.04)
+    width = v.get("width", SAFE_R - SAFE_L)
+    f, lines, size = fit_text(v["text"].upper(), "display", width, 480, 140, spacing=1.04)
     body = text_layer(lines, f, size, WHITE, spacing=1.04)
     via = pill("via " + v.get("outlet", ""), font("bold", 36), WHITE, NAVY2) if v.get("outlet") else None
-    st = stamp(v.get("stamp", "UNCONFIRMED").upper(), font("display", 64), RED)
+    st = stamp(v.get("stamp", "UNCONFIRMED").upper(), font("display", 64 if width >= SAFE_R - SAFE_L else 44), RED)
     total_h = kicker.height + 30 + body.height + (via.height + 30 if via else 0)
     top = CARD_TOP + (CARD_BOTTOM - CARD_TOP - total_h) // 2
 
@@ -364,7 +365,8 @@ def scene_rumour(v):
         s = ease_back((t - 0.55) / 0.25)  # stamp slams on last
         if s > 0.02:
             layer = st.resize((max(int(st.width * (2 - s)), 1), max(int(st.height * (2 - s)), 1)), Image.BILINEAR)
-            paste(fr, layer, SAFE_R - st.width + 20 - (layer.width - st.width) / 2,
+            sx = SAFE_R - st.width + 20 if width >= SAFE_R - SAFE_L else SAFE_L + kicker.width + 24
+            paste(fr, layer, sx - (layer.width - st.width) / 2,
                   top - 30 - (layer.height - st.height) / 2, min(1.0, s))
     return draw
 
@@ -379,11 +381,12 @@ def scene_verdict(v):
     word = v.get("word", "UNCONFIRMED").upper()
     col = VERDICT_COLS.get(word.lower(), GOLD)
     kicker = pill("RUMOUR CHECK", font("bold", 40), NAVY, GOLD)
-    cf, cl, cs = fit_text(v.get("text", "").upper(), "display", SAFE_R - SAFE_L, 250, 96, minimum=48, spacing=1.04)
+    width = v.get("width", SAFE_R - SAFE_L)
+    cf, cl, cs = fit_text(v.get("text", "").upper(), "display", width, 250, 96, minimum=48, spacing=1.04)
     claim = text_layer(cl, cf, cs, WHITE, spacing=1.04)
-    st = stamp(word, font("display", 92), col, angle=-6)
+    st = stamp(word, font("display", 92 if width >= SAFE_R - SAFE_L else 64), col, angle=-6)
     num_f, lab_f = font("display", 120), font("bold", 34)
-    bar_w, bar_h = SAFE_R - SAFE_L, 46
+    bar_w, bar_h = width, 46
     y_claim = CARD_TOP + kicker.height + 24
     y_bar = y_claim + claim.height + 60
     y_stamp = y_bar + bar_h + 150
@@ -407,7 +410,7 @@ def scene_verdict(v):
         s = ease_back((t - 1.2) / 0.25)
         if s > 0.02:
             layer = st.resize((max(int(st.width * (2 - s)), 1), max(int(st.height * (2 - s)), 1)), Image.BILINEAR)
-            paste(fr, layer, SAFE_R - st.width - (layer.width - st.width) / 2,
+            paste(fr, layer, SAFE_L + width - st.width - (layer.width - st.width) / 2,
                   y_stamp - (layer.height - st.height) / 2, min(1.0, s))
     return draw
 

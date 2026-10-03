@@ -205,7 +205,7 @@ def render(script_path, out_path=None, voice=None, preview=False):
         if v["type"] == "broll" and not clips:
             v = {"type": "headline", "text": v.get("text") or v.get("fallback") or "", "kicker": v.get("kicker", "LATEST")}
         photo = photo_record(s.get("image"))
-        if photo and photo.get("person") and v["type"] == "headline":
+        if photo and photo.get("person") and v["type"] in ("headline", "rumour", "verdict"):
             v = {**v, "width": PHOTO_TEXT_W}  # keep the text left of the face
         draws.append((v, scenes.SCENES[v["type"]](v)))
 

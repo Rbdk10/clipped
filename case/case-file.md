@@ -2,7 +2,7 @@
 
 Premier League v Manchester City, the "115 charges" case. The daily agent keeps this file current. Every fact needs a source link. Mark anything single-sourced or disputed.
 
-**Last updated:** 2026-10-02
+**Last updated:** 2026-10-03
 **Day counter:** Day 1 = Tue 29 Sep 2026, the day the verdict was published. So Day N = days since 28 Sep 2026.
 
 ## Where it stands now
@@ -16,6 +16,11 @@ Premier League v Manchester City, the "115 charges" case. The daily agent keeps 
   - As of 1 Oct the appeal is not confirmed as lodged.
   - No appeal hearing date has been set.
 - **City's appeal argument (reported 1 Oct):** the sponsorship money came from the Abu Dhabi government, not from owner Sheikh Mansour/ADUG. Government-backed sponsorship is allowed. [Sky Sports](https://www.skysports.com/football/news/13594069/man-city-charges-how-premier-league-club-plan-to-argue-their-innocence-in-appeal), [Irish News](https://www.irishnews.com/sport/soccer/man-city-to-claim-sponsor-money-was-paid-by-abu-dhabi-government-during-appeal-ZLHPIYFRH5I7ZBKKJMB22MILZM/)
+
+- **UAE pressure (2 Oct):** Bloomberg reports Abu Dhabi warned the UK government a harsh sanction could affect "the desire to invest", including billions for an Oxford–Cambridge tech hub; the UAE has invested >£30bn in the UK in five years. Khaldoon Al Mubarak met Business Secretary Jonathan Reynolds ~2 weeks before the verdict. [Yahoo/Bloomberg](https://finance.yahoo.com/economy/articles/man-city-premier-league-verdict-191748351.html), [Goal](https://www.goal.com/en/news/manchester-city-raise-tensions-uae-warns-britain-of-the-repercussions-of-the-penalty/bltc747435e4e0e2ddf)
+- **Etihad legal action (2 Oct):** Etihad has instructed Quinn Emanuel for a potential case against the PL. [The Lawyer](https://www.thelawyer.com/man-city-fallout-etihad-airways-calls-on-quinn-emanuel-in-case-against-premier-league/)
+- *Single source (Express, 3 Oct):* Man Utd ran an internal review of seasons City finished above them (2011/12, 2015/16, 2017/18). No claim filed. [Express via AOL](https://aol.co.uk/articles/man-utd-conduct-review-over-121200000.html)
+- *Rumour (TEAMtalk and others):* Haaland won't stay if City are relegated. His contract runs to 2034; The Sun reports no relegation clause.
 
 ## What the commission found (plain English)
 - **Disguised owner funding:** City booked about £949.9m of sponsorship from Abu Dhabi partners.

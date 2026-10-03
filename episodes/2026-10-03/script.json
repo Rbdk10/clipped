@@ -1,0 +1,205 @@
+{
+  "date": "2026-10-03",
+  "day": 5,
+  "series": "The City Case",
+  "title": "Abu Dhabi warns the UK, and Haaland's escape clause",
+  "rumour": {
+    "claim": "Haaland won't stay if City are relegated",
+    "outlet": "TEAMtalk",
+    "rating": 3
+  },
+  "voice": "bm_george",
+  "speed": 1.22,
+  "segments": [
+    {
+      "say": "TEAMtalk claims Erling Haaland won't stay at City if they're relegated.",
+      "image": "photos/erling-haaland-2023.jpg",
+      "visual": {
+        "type": "rumour",
+        "text": "Haaland walks if City go down?",
+        "outlet": "TEAMtalk"
+      }
+    },
+    {
+      "say": "We'll tell you how much of that holds up at the end. First, today's actual news.",
+      "image": "photos/etihad-stadium-dusk.jpg",
+      "visual": {
+        "type": "punch",
+        "text": "First, the news",
+        "color": "gold"
+      }
+    },
+    {
+      "say": "Bloomberg reports Abu Dhabi has warned the UK government a harsh punishment could hit future investment.",
+      "image": "photos/palace-of-westminster-night-2009.jpg",
+      "visual": {
+        "type": "headline",
+        "kicker": "Bloomberg",
+        "urgent": false,
+        "text": "Abu Dhabi warns the UK"
+      },
+      "source": "Bloomberg, Guardian, 2 Oct"
+    },
+    {
+      "say": "The UAE has put over £30bn into Britain in five years, including plans for an Oxford to Cambridge tech hub.",
+      "image": "photos/palace-of-westminster-night-2009-river.jpg",
+      "visual": {
+        "type": "stat",
+        "prefix": "£",
+        "value": "30",
+        "suffix": "BN+",
+        "label": "UAE investment in the UK, last five years",
+        "accent": "gold"
+      },
+      "source": "Bloomberg via AFP, 2 Oct"
+    },
+    {
+      "say": "And City chairman Khaldoon Al Mubarak met the Business Secretary two weeks before the verdict.",
+      "image": "photos/khaldoon-al-mubarak-wef-2025.jpg",
+      "visual": {
+        "type": "headline",
+        "kicker": "Downing Street",
+        "urgent": false,
+        "text": "Chairman met minister"
+      },
+      "source": "GB News, Goal, 2 Oct"
+    },
+    {
+      "say": "Etihad has hired Quinn Emanuel, dubbed the world's most feared law firm, while City, who deny wrongdoing, appeal.",
+      "image": "photos/etihad-787-landing-toronto-1.jpg",
+      "visual": {
+        "type": "headline",
+        "kicker": "The Lawyer",
+        "urgent": false,
+        "text": "Etihad hires the 'most feared' firm"
+      },
+      "source": "The Lawyer, 2 Oct"
+    },
+    {
+      "say": "But here's the twist. Manchester United are counting the cost.",
+      "image": "photos/old-trafford-2023.jpg",
+      "visual": {
+        "type": "punch",
+        "text": "The twist",
+        "color": "red"
+      }
+    },
+    {
+      "say": "The Express reports United reviewed seasons City pipped them, including the 2012 title, lost on goal difference.",
+      "image": "photos/old-trafford-2023.jpg",
+      "visual": {
+        "type": "headline",
+        "kicker": "The Express",
+        "urgent": false,
+        "text": "United count the cost"
+      },
+      "source": "Express, 3 Oct"
+    },
+    {
+      "say": "And Pep Guardiola plans to be at the Etihad for the PSG game on 14 October, to back his old club.",
+      "image": "photos/pep-guardiola-2021.jpg",
+      "visual": {
+        "type": "headline",
+        "kicker": "Pep's back",
+        "urgent": false,
+        "text": "One night only"
+      },
+      "source": "Goal, Yahoo Sports, 2 Oct"
+    },
+    {
+      "say": "Next, a sanction hearing and City's appeal. Neither has a date, so any punishment is still to come.",
+      "image": "photos/premier-league-hq-brunel-building-2021.jpg",
+      "visual": {
+        "type": "list",
+        "title": "What's next",
+        "items": [
+          "Sanction hearing: no date",
+          "City's appeal: no date",
+          "Pep at the Etihad: 14 Oct"
+        ]
+      }
+    },
+    {
+      "say": "Rumour check on Haaland. His contract runs to 2034, and The Sun reports there's no relegation clause.",
+      "image": "photos/erling-haaland-2023.jpg",
+      "visual": {
+        "type": "verdict",
+        "text": "Haaland walks if City go down",
+        "rating": 3,
+        "word": "shaky"
+      },
+      "source": "The Sun, FootballTransfers"
+    },
+    {
+      "say": "A legal expert told Goal players might try to end contracts, but Haaland's camp is silent. Three out of ten.",
+      "image": "photos/erling-haaland-2023.jpg",
+      "visual": {
+        "type": "headline",
+        "kicker": "Contract",
+        "urgent": false,
+        "text": "Signed until 2034"
+      },
+      "source": "Goal, 2 Oct"
+    },
+    {
+      "say": "Would Haaland really leave? Comment below, and follow for tomorrow's update.",
+      "image": "photos/etihad-stadium-aerial-2023.jpg",
+      "visual": {
+        "type": "headline",
+        "kicker": "Your verdict",
+        "urgent": false,
+        "text": "Haaland: stay or go?"
+      }
+    }
+  ],
+  "caption": "Man City 115 charges update, Day 5: Abu Dhabi warns the UK over investment. Bloomberg reports the UAE warned a harsh sanction could hit future investment; Etihad has hired Quinn Emanuel; the Express says Man Utd reviewed what City's breaches cost them. City deny wrongdoing and are appealing; the punishment is undecided. Rumour check: Haaland. Sources: Bloomberg, Guardian, The Lawyer, Express, Goal, The Sun. Photos: Steffen Prößdorf, CC BY-SA 4.0; A Jean Genie, CC BY 4.0; Cristiano Betta, CC BY 2.0; World Economic Forum, CC BY 3.0; Steven He, public domain; Arne Müseler, CC BY-SA 3.0 DE; Matt Brown, CC BY 2.0. AI voiceover.",
+  "hashtags": [
+    "#mancity",
+    "#115charges",
+    "#premierleague",
+    "#footballnews",
+    "#haaland"
+  ],
+  "sources": [
+    {
+      "name": "Bloomberg via Yahoo Finance: How Man City's verdict could damage the UK economy",
+      "url": "https://finance.yahoo.com/economy/articles/man-city-premier-league-verdict-191748351.html"
+    },
+    {
+      "name": "Goal: UAE warns Britain of the repercussions of the penalty",
+      "url": "https://www.goal.com/en/news/manchester-city-raise-tensions-uae-warns-britain-of-the-repercussions-of-the-penalty/bltc747435e4e0e2ddf"
+    },
+    {
+      "name": "GB News: Burnham warned by UAE",
+      "url": "https://www.gbnews.com/sport/football/andy-burnham-uae-manchester-city-case"
+    },
+    {
+      "name": "The Lawyer: Etihad calls on Quinn Emanuel",
+      "url": "https://www.thelawyer.com/man-city-fallout-etihad-airways-calls-on-quinn-emanuel-in-case-against-premier-league/"
+    },
+    {
+      "name": "Express via AOL: Man Utd conduct review",
+      "url": "https://aol.co.uk/articles/man-utd-conduct-review-over-121200000.html"
+    },
+    {
+      "name": "Goal: Guardiola set for Man City return",
+      "url": "https://www.goal.com/en/lists/pep-guardiola-manchester-city-return-guilty-verdict/blt060a2c0f52f5309f"
+    },
+    {
+      "name": "Yahoo Sports: Guardiola to return in show of solidarity",
+      "url": "https://sports.yahoo.com/articles/pep-guardiola-return-manchester-city-161141642.html"
+    },
+    {
+      "name": "TEAMtalk: Haaland's reaction to the verdict",
+      "url": "https://www.teamtalk.com/manchester-city/erling-haaland-man-city-ffp-guilty-verdict-reaction-arsenal-transfer"
+    },
+    {
+      "name": "FootballTransfers: Haaland verdict amid uncertain future",
+      "url": "https://www.footballtransfers.com/en/transfer-news/uk-premier-league/2026/10/liverpool-transfer-news-erling-haaland-man-city-free-transfer-contract-paul-gilroy"
+    },
+    {
+      "name": "Goal: Haaland and City stars could leave for free, legal expert explains",
+      "url": "https://www.goal.com/en/lists/erling-haaland-man-city-terminate-contracts-guilty-verdict/blt6fe36acb976d7186"
+    }
+  ]
+}
