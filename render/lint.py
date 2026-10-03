@@ -82,18 +82,23 @@ def lint(script, path=None):
         if re.search(r"\bguilty\b", s.get("say", ""), re.I) and not re.search(
                 r"\b(premier league|commission|panel|found|says|ruled|according)\b", s.get("say", ""), re.I):
             errors.append(f"segment {i}: 'guilty' must be attributed")
-    if segs and len(segs[0].get("say", "").split()) > 18:
-        warnings.append("hook is over 18 words")
 
     # Shape: rumour hook -> new news -> rumour check. No recap segments.
     rumour = script.get("rumour")
+    if segs:
+        hook = segs[0].get("say", "")
+        if len(hook.split()) > 12:
+            warnings.append("hook is over 12 words: sell the stakes in one breath")
+        if re.search(r"\b(claims?|according to|reports say)\b", hook, re.I):
+            errors.append("hook (segment 1) sells the stakes; outlets and 'claims' belong on the card and in the rumour check")
     if rumour:
         if types[:1] != ["rumour"]:
             errors.append("segment 1 must be the 'rumour' visual (the hook)")
-        outlet = (rumour.get("outlet") or segs[0].get("visual", {}).get("outlet") or "") if segs else ""
-        first = outlet.split("/")[0].strip().lower()
-        if segs and first and first not in segs[0].get("say", "").lower():
-            errors.append(f"hook must name who's claiming it aloud ({outlet!r}); the narrator never asserts a rumour")
+        say1 = segs[0].get("say", "") if segs else ""
+        if not re.search(r"\b(might|could|may|reportedly|rumou?r)\b", say1, re.I):
+            errors.append("the rumour hook must be hedged ('might', 'could'); the narrator never states it as fact")
+        if not (segs[0].get("visual", {}).get("outlet") if segs else None):
+            errors.append("the rumour card needs an 'outlet'")
         if "verdict" not in types[-3:]:
             errors.append("the rumour check ('verdict' visual) must be in the last 3 segments")
     else:

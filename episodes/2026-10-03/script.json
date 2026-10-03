@@ -2,7 +2,7 @@
   "date": "2026-10-03",
   "day": 5,
   "series": "The City Case",
-  "title": "Abu Dhabi warns the UK, and Haaland's escape clause",
+  "title": "Haaland might leave, and Abu Dhabi fires a warning shot",
   "rumour": {
     "claim": "Haaland won't stay if City are relegated",
     "outlet": "TEAMtalk",
@@ -12,16 +12,16 @@
   "speed": 1.22,
   "segments": [
     {
-      "say": "TEAMtalk claims Erling Haaland won't stay at City if they're relegated.",
+      "say": "Erling Haaland might be leaving Manchester City.",
       "image": "photos/erling-haaland-2023.jpg",
       "visual": {
         "type": "rumour",
-        "text": "Haaland walks if City go down?",
+        "text": "Haaland might be leaving",
         "outlet": "TEAMtalk"
       }
     },
     {
-      "say": "We'll tell you how much of that holds up at the end. First, today's actual news.",
+      "say": "Is it true? Stick around for the end. First, today's news.",
       "image": "photos/etihad-stadium-dusk.jpg",
       "visual": {
         "type": "punch",
@@ -30,53 +30,69 @@
       }
     },
     {
-      "say": "Bloomberg reports Abu Dhabi has warned the UK government a harsh punishment could hit future investment.",
+      "say": "Abu Dhabi has fired a warning shot at Britain. Punish City hard, and the investment could dry up.",
       "image": "photos/palace-of-westminster-night-2009.jpg",
       "visual": {
         "type": "headline",
-        "kicker": "Bloomberg",
-        "urgent": false,
-        "text": "Abu Dhabi warns the UK"
+        "kicker": "Warning shot",
+        "urgent": true,
+        "text": "Punish City, lose the billions?"
       },
       "source": "Bloomberg, Guardian, 2 Oct"
     },
     {
-      "say": "The UAE has put over £30bn into Britain in five years, including plans for an Oxford to Cambridge tech hub.",
+      "say": "We're talking over £30bn pumped into the UK in five years, according to Bloomberg.",
       "image": "photos/palace-of-westminster-night-2009-river.jpg",
       "visual": {
         "type": "stat",
         "prefix": "£",
         "value": "30",
         "suffix": "BN+",
-        "label": "UAE investment in the UK, last five years",
+        "label": "UAE money in the UK, last five years",
         "accent": "gold"
       },
       "source": "Bloomberg via AFP, 2 Oct"
     },
     {
-      "say": "And City chairman Khaldoon Al Mubarak met the Business Secretary two weeks before the verdict.",
+      "say": "And City's chairman sat down with a cabinet minister just two weeks before the verdict.",
       "image": "photos/khaldoon-al-mubarak-wef-2025.jpg",
       "visual": {
         "type": "headline",
-        "kicker": "Downing Street",
+        "kicker": "Two weeks before",
         "urgent": false,
         "text": "Chairman met minister"
       },
       "source": "GB News, Goal, 2 Oct"
     },
     {
-      "say": "Etihad has hired Quinn Emanuel, dubbed the world's most feared law firm, while City, who deny wrongdoing, appeal.",
+      "say": "Then City's own sponsor lawyered up against the Premier League, with the firm rivals call the most feared.",
       "image": "photos/etihad-787-landing-toronto-1.jpg",
       "visual": {
         "type": "headline",
-        "kicker": "The Lawyer",
+        "kicker": "Etihad",
         "urgent": false,
-        "text": "Etihad hires the 'most feared' firm"
+        "text": "Sponsor lawyers up"
       },
       "source": "The Lawyer, 2 Oct"
     },
     {
-      "say": "But here's the twist. Manchester United are counting the cost.",
+      "say": "That's Quinn Emanuel, while City, who deny any wrongdoing, fight their appeal.",
+      "image": "photos/etihad-787-landing-toronto-2.jpg",
+      "visual": {
+        "type": "versus",
+        "left": {
+          "label": "Etihad",
+          "text": "Quinn Emanuel"
+        },
+        "right": {
+          "label": "Opponent",
+          "text": "Premier League"
+        }
+      },
+      "source": "The Lawyer, 2 Oct"
+    },
+    {
+      "say": "But here's the twist. Manchester United want to know exactly what City cost them.",
       "image": "photos/old-trafford-2023.jpg",
       "visual": {
         "type": "punch",
@@ -85,18 +101,18 @@
       }
     },
     {
-      "say": "The Express reports United reviewed seasons City pipped them, including the 2012 title, lost on goal difference.",
+      "say": "According to the Express, United have started adding up the damage, and the 2012 title is on the list.",
       "image": "photos/old-trafford-2023.jpg",
       "visual": {
         "type": "headline",
         "kicker": "The Express",
         "urgent": false,
-        "text": "United count the cost"
+        "text": "2012 is on the list"
       },
       "source": "Express, 3 Oct"
     },
     {
-      "say": "And Pep Guardiola plans to be at the Etihad for the PSG game on 14 October, to back his old club.",
+      "say": "And Pep Guardiola is coming back. He's set to be at the Etihad for the PSG game on 14 October.",
       "image": "photos/pep-guardiola-2021.jpg",
       "visual": {
         "type": "headline",
@@ -107,11 +123,11 @@
       "source": "Goal, Yahoo Sports, 2 Oct"
     },
     {
-      "say": "Next, a sanction hearing and City's appeal. Neither has a date, so any punishment is still to come.",
+      "say": "The punishment is still coming, and nobody knows when.",
       "image": "photos/premier-league-hq-brunel-building-2021.jpg",
       "visual": {
         "type": "list",
-        "title": "What's next",
+        "title": "Still to come",
         "items": [
           "Sanction hearing: no date",
           "City's appeal: no date",
@@ -120,7 +136,7 @@
       }
     },
     {
-      "say": "Rumour check on Haaland. His contract runs to 2034, and The Sun reports there's no relegation clause.",
+      "say": "So, Haaland. TEAMtalk claims he won't stay if City go down. But his contract runs to 2034, with no relegation clause, says The Sun.",
       "image": "photos/erling-haaland-2023.jpg",
       "visual": {
         "type": "verdict",
@@ -128,10 +144,10 @@
         "rating": 3,
         "word": "shaky"
       },
-      "source": "The Sun, FootballTransfers"
+      "source": "TEAMtalk, The Sun"
     },
     {
-      "say": "A legal expert told Goal players might try to end contracts, but Haaland's camp is silent. Three out of ten.",
+      "say": "Players might try to break contracts, a legal expert told Goal, but Haaland's camp is silent. Three out of ten.",
       "image": "photos/erling-haaland-2023.jpg",
       "visual": {
         "type": "headline",
@@ -142,7 +158,7 @@
       "source": "Goal, 2 Oct"
     },
     {
-      "say": "Would Haaland really leave? Comment below, and follow for tomorrow's update.",
+      "say": "Would Haaland really walk? Comment below, and follow for tomorrow's update.",
       "image": "photos/etihad-stadium-aerial-2023.jpg",
       "visual": {
         "type": "headline",
@@ -152,7 +168,7 @@
       }
     }
   ],
-  "caption": "Man City 115 charges update, Day 5: Abu Dhabi warns the UK over investment. Bloomberg reports the UAE warned a harsh sanction could hit future investment; Etihad has hired Quinn Emanuel; the Express says Man Utd reviewed what City's breaches cost them. City deny wrongdoing and are appealing; the punishment is undecided. Rumour check: Haaland. Sources: Bloomberg, Guardian, The Lawyer, Express, Goal, The Sun. Photos: Steffen Prößdorf, CC BY-SA 4.0; A Jean Genie, CC BY 4.0; Cristiano Betta, CC BY 2.0; World Economic Forum, CC BY 3.0; Steven He, public domain; Arne Müseler, CC BY-SA 3.0 DE; Matt Brown, CC BY 2.0. AI voiceover.",
+  "caption": "Man City 115 charges update, Day 5: Haaland might leave, and Abu Dhabi fires a warning shot. Bloomberg reports the UAE warned a harsh sanction could hit future investment; Etihad has hired Quinn Emanuel; the Express says Man Utd reviewed what City's breaches cost them. City deny wrongdoing and are appealing; the punishment is undecided. Rumour check: Haaland. Sources: Bloomberg, Guardian, The Lawyer, Express, Goal, The Sun. Photos: Steffen Prößdorf, CC BY-SA 4.0; A Jean Genie, CC BY 4.0; Cristiano Betta, CC BY 2.0; World Economic Forum, CC BY 3.0; Steven He, public domain; Arne Müseler, CC BY-SA 3.0 DE; Matt Brown, CC BY 2.0. AI voiceover.",
   "hashtags": [
     "#mancity",
     "#115charges",

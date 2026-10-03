@@ -6,7 +6,7 @@
   "day": 3,                      // days since 28 Sep 2026
   "series": "The City Case",     // badge text (optional)
   "title": "City's appeal plan revealed",
-  "rumour": {"claim": "Pep could return if the appeal fails", "outlet": "Metro", "rating": 2},  // the hook the episode pays off at the end
+  "rumour": {"claim": "Pep could return if the appeal fails", "outlet": "Metro", "rating": 2},  // segment 2's rumour, paid off at the end
   "elevenlabs": {"voice_id": "fhWgCDAdAXgPVl5ls9uP", "speed": 1.0},  // optional overrides (default voice: Matthew)
   "voice": "bm_george",          // Kokoro fallback voice: bm_george | bm_lewis | bm_daniel | bm_fable …
   "speed": 1.22,                 // Kokoro speed; 1.15–1.3 sounds natural
