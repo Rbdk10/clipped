@@ -12,7 +12,22 @@
   "speed": 1.22,
   "segments": [
     {
-      "say": "Erling Haaland might be leaving Manchester City.",
+      "say": "Haaland's future, Man United counting what City's titles cost them, Etihad hiring the world's most feared law firm, and more. It's all in this video.",
+      "image": "photos/etihad-stadium-aerial-2023.jpg",
+      "visual": {
+        "type": "list",
+        "title": "In this video",
+        "items": [
+          "Haaland's future",
+          "United count the cost",
+          "Etihad lawyers up",
+          "Abu Dhabi's warning"
+        ],
+        "step": 1.3
+      }
+    },
+    {
+      "say": "First up: Erling Haaland might be leaving City. Is it true? We'll tell you at the end.",
       "image": "photos/erling-haaland-2023.jpg",
       "visual": {
         "type": "rumour",
@@ -21,16 +36,7 @@
       }
     },
     {
-      "say": "Is it true? Stick around for the end. First, today's news.",
-      "image": "photos/etihad-stadium-dusk.jpg",
-      "visual": {
-        "type": "punch",
-        "text": "First, the news",
-        "color": "gold"
-      }
-    },
-    {
-      "say": "Abu Dhabi has fired a warning shot at Britain. Punish City hard, and the investment could dry up.",
+      "say": "Abu Dhabi has fired a warning shot at Britain: punish City hard, and the investment could dry up.",
       "image": "photos/palace-of-westminster-night-2009.jpg",
       "visual": {
         "type": "headline",
@@ -41,7 +47,7 @@
       "source": "Bloomberg, Guardian, 2 Oct"
     },
     {
-      "say": "We're talking over £30bn pumped into the UK in five years, according to Bloomberg.",
+      "say": "That's over £30bn pumped into the UK in five years.",
       "image": "photos/palace-of-westminster-night-2009-river.jpg",
       "visual": {
         "type": "stat",
@@ -54,7 +60,7 @@
       "source": "Bloomberg via AFP, 2 Oct"
     },
     {
-      "say": "And City's chairman sat down with a cabinet minister just two weeks before the verdict.",
+      "say": "And City's chairman met a cabinet minister two weeks before the verdict.",
       "image": "photos/khaldoon-al-mubarak-wef-2025.jpg",
       "visual": {
         "type": "headline",
@@ -65,7 +71,7 @@
       "source": "GB News, Goal, 2 Oct"
     },
     {
-      "say": "Then City's own sponsor lawyered up against the Premier League, with the firm rivals call the most feared.",
+      "say": "Then City's own sponsor lawyered up against the Premier League, hiring Quinn Emanuel, the world's most feared law firm.",
       "image": "photos/etihad-787-landing-toronto-1.jpg",
       "visual": {
         "type": "headline",
@@ -76,23 +82,7 @@
       "source": "The Lawyer, 2 Oct"
     },
     {
-      "say": "That's Quinn Emanuel, while City, who deny any wrongdoing, fight their appeal.",
-      "image": "photos/etihad-787-landing-toronto-2.jpg",
-      "visual": {
-        "type": "versus",
-        "left": {
-          "label": "Etihad",
-          "text": "Quinn Emanuel"
-        },
-        "right": {
-          "label": "Opponent",
-          "text": "Premier League"
-        }
-      },
-      "source": "The Lawyer, 2 Oct"
-    },
-    {
-      "say": "But here's the twist. Manchester United want to know exactly what City cost them.",
+      "say": "But here's the twist. Manchester United want to know what City cost them.",
       "image": "photos/old-trafford-2023.jpg",
       "visual": {
         "type": "punch",
@@ -112,7 +102,7 @@
       "source": "Express, 3 Oct"
     },
     {
-      "say": "And Pep Guardiola is coming back. He's set to be at the Etihad for the PSG game on 14 October.",
+      "say": "And Pep Guardiola is coming back, for the PSG game on 14 October.",
       "image": "photos/pep-guardiola-2021.jpg",
       "visual": {
         "type": "headline",
@@ -123,7 +113,7 @@
       "source": "Goal, Yahoo Sports, 2 Oct"
     },
     {
-      "say": "The punishment is still coming, and nobody knows when.",
+      "say": "City deny wrongdoing, but the punishment is still coming, and nobody knows when.",
       "image": "photos/premier-league-hq-brunel-building-2021.jpg",
       "visual": {
         "type": "list",
@@ -136,7 +126,7 @@
       }
     },
     {
-      "say": "So, Haaland. TEAMtalk claims he won't stay if City go down. But his contract runs to 2034, with no relegation clause, says The Sun.",
+      "say": "So, Haaland. TEAMtalk claims he'd go if City are relegated. But The Sun says his contract to 2034 has no relegation clause.",
       "image": "photos/erling-haaland-2023.jpg",
       "visual": {
         "type": "verdict",
@@ -147,7 +137,7 @@
       "source": "TEAMtalk, The Sun"
     },
     {
-      "say": "Players might try to break contracts, a legal expert told Goal, but Haaland's camp is silent. Three out of ten.",
+      "say": "A legal expert says players might break contracts, but Haaland's camp is silent. Three out of ten.",
       "image": "photos/erling-haaland-2023.jpg",
       "visual": {
         "type": "headline",

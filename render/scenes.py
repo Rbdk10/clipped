@@ -235,7 +235,7 @@ def scene_list(v):
         d = ImageDraw.Draw(fr)
         paste(fr, title, SAFE_L, CARD_TOP + 10, ease_out(t / 0.3))
         y = CARD_TOP + 10 + title.height + 30
-        step = max(min((dur * 0.75) / max(len(items), 1), 2.5), 0.4)
+        step = v.get("step") or max(min((dur * 0.75) / max(len(items), 1), 2.5), 0.4)
         for i, im in enumerate(items):
             a = ease_out((t - 0.25 - i * step) / 0.3)
             if a > 0:

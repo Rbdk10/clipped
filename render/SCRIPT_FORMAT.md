@@ -37,7 +37,7 @@ The voice reads `£830m` as "830 million pounds", and `PL` as "Premier League". 
 | `stat` | `value`, `prefix`?, `suffix`?, `of`?, `label`, `accent`: "gold"? | `{"type":"stat","value":"114","of":"115","label":"charges upheld"}` |
 | `versus` | `left`/`right`: `{label, text}` | `{"type":"versus","left":{"label":"Commission","text":"Owner's money"},"right":{"label":"City","text":"Government money"}}` |
 | `quote` | `text`, `who` | `{"type":"quote","text":"Clear material errors","who":"Manchester City statement"}` |
-| `list` | `title`, `items` (≤ 4, short) | `{"type":"list","title":"What happens next","items":["Appeal by Friday","New appeal board"]}` |
+| `list` | `title`, `items` (≤ 4, short), `step`? (seconds between items; ~1.3 for the intro) | `{"type":"list","title":"What happens next","items":["Appeal by Friday","New appeal board"]}` |
 | `timeline` | `items` [[date, event]…] (≤ 6), `highlight` (index) | `{"type":"timeline","items":[["Feb 2023","Charged"],["29 Sep 2026","Verdict"]],"highlight":1}` |
 | `broll` | `tags`, `text`? | Uses a clip from `library/broll/index.json`. With no clips it falls back to a headline using `text`. |
 
