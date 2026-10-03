@@ -6,6 +6,7 @@
   "day": 3,                      // days since 28 Sep 2026
   "series": "The City Case",     // badge text (optional)
   "title": "City's appeal plan revealed",
+  "rumour": {"claim": "Pep could return if the appeal fails", "outlet": "Metro", "rating": 2},  // the hook the episode pays off at the end
   "elevenlabs": {"voice_id": "fhWgCDAdAXgPVl5ls9uP", "speed": 1.0},  // optional overrides (default voice: Matthew)
   "voice": "bm_george",          // Kokoro fallback voice: bm_george | bm_lewis | bm_daniel | bm_fable …
   "speed": 1.22,                 // Kokoro speed; 1.15–1.3 sounds natural
@@ -29,6 +30,8 @@ The voice reads `£830m` as "830 million pounds", and `PL` as "Premier League". 
 
 | type | fields | example |
 |---|---|---|
+| `rumour` | `text` (the claim, ≤ 10 words), `outlet`, `stamp`? (default "UNCONFIRMED") | `{"type":"rumour","text":"Pep back if the appeal fails?","outlet":"Metro"}` |
+| `verdict` | `text` (short claim), `rating` 0–10, `word`: confirmed / developing / shaky / denied | `{"type":"verdict","text":"Pep return","rating":2,"word":"shaky"}` |
 | `headline` | `text`, `kicker`, `sub`?, `urgent` (red kicker, default true) | `{"type":"headline","kicker":"Appeal deadline","text":"City have until Friday"}` |
 | `punch` | `text` (1–3 words), `color`: white/gold/red/sky | `{"type":"punch","text":"The twist","color":"gold"}` |
 | `stat` | `value`, `prefix`?, `suffix`?, `of`?, `label`, `accent`: "gold"? | `{"type":"stat","value":"114","of":"115","label":"charges upheld"}` |

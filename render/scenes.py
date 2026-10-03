@@ -332,7 +332,89 @@ def scene_punch(v):
     return draw
 
 
+def stamp(text, fnt, col, angle=-8, pad=(22, 10), border=6):
+    """Rubber-stamp label: outlined box, rotated."""
+    probe = ImageDraw.Draw(Image.new("L", (1, 1)))
+    box = probe.textbbox((0, 0), text, font=fnt)
+    w, h = box[2] - box[0] + pad[0] * 2, box[3] - box[1] + pad[1] * 2
+    im = Image.new("RGBA", (w + border * 2, h + border * 2), (0, 0, 0, 0))
+    d = ImageDraw.Draw(im)
+    d.rounded_rectangle([border // 2, border // 2, w + border * 1.5, h + border * 1.5], radius=10, outline=col, width=border)
+    d.text((border + pad[0] - box[0], border + pad[1] - box[1]), text, font=fnt, fill=col)
+    return im.rotate(angle, expand=True, resample=Image.BICUBIC)
+
+
+def scene_rumour(v):
+    """Opening hook: the rumour, who's saying it, and an UNCONFIRMED stamp."""
+    kicker = pill("THE RUMOUR", font("bold", 40), NAVY, GOLD)
+    f, lines, size = fit_text(v["text"].upper(), "display", SAFE_R - SAFE_L, 480, 140, spacing=1.04)
+    body = text_layer(lines, f, size, WHITE, spacing=1.04)
+    via = pill("via " + v.get("outlet", ""), font("bold", 36), WHITE, NAVY2) if v.get("outlet") else None
+    st = stamp(v.get("stamp", "UNCONFIRMED").upper(), font("display", 64), RED)
+    total_h = kicker.height + 30 + body.height + (via.height + 30 if via else 0)
+    top = CARD_TOP + (CARD_BOTTOM - CARD_TOP - total_h) // 2
+
+    def draw(fr, t, dur):
+        a = ease_out(t / 0.3)
+        paste(fr, kicker, SAFE_L - 40 * (1 - a), top, a)
+        b = ease_out((t - 0.08) / 0.35)
+        paste(fr, body, SAFE_L, top + kicker.height + 30 + 50 * (1 - b), b)
+        if via:
+            paste(fr, via, SAFE_L, top + kicker.height + 30 + body.height + 30, ease_out((t - 0.3) / 0.3))
+        s = ease_back((t - 0.55) / 0.25)  # stamp slams on last
+        if s > 0.02:
+            layer = st.resize((max(int(st.width * (2 - s)), 1), max(int(st.height * (2 - s)), 1)), Image.BILINEAR)
+            paste(fr, layer, SAFE_R - st.width + 20 - (layer.width - st.width) / 2,
+                  top - 30 - (layer.height - st.height) / 2, min(1.0, s))
+    return draw
+
+
+VERDICT_COLS = {"confirmed": (60, 200, 120), "developing": GOLD, "shaky": (255, 140, 40),
+                "unconfirmed": (255, 140, 40), "denied": RED, "false": RED}
+
+
+def scene_verdict(v):
+    """Payoff: back to the opening rumour, with a 0-10 credibility meter."""
+    rating = max(0, min(10, int(v.get("rating", 5))))
+    word = v.get("word", "UNCONFIRMED").upper()
+    col = VERDICT_COLS.get(word.lower(), GOLD)
+    kicker = pill("RUMOUR CHECK", font("bold", 40), NAVY, GOLD)
+    cf, cl, cs = fit_text(v.get("text", "").upper(), "display", SAFE_R - SAFE_L, 250, 96, minimum=48, spacing=1.04)
+    claim = text_layer(cl, cf, cs, WHITE, spacing=1.04)
+    st = stamp(word, font("display", 92), col, angle=-6)
+    num_f, lab_f = font("display", 120), font("bold", 34)
+    bar_w, bar_h = SAFE_R - SAFE_L, 46
+    y_claim = CARD_TOP + kicker.height + 24
+    y_bar = y_claim + claim.height + 60
+    y_stamp = y_bar + bar_h + 150
+
+    def draw(fr, t, dur):
+        d = ImageDraw.Draw(fr)
+        a = ease_out(t / 0.3)
+        paste(fr, kicker, SAFE_L - 40 * (1 - a), CARD_TOP, a)
+        paste(fr, claim, SAFE_L, y_claim + 40 * (1 - a), a)
+        p = ease_out((t - 0.35) / 1.0)
+        d.rounded_rectangle([SAFE_L, y_bar, SAFE_L + bar_w, y_bar + bar_h], radius=bar_h // 2, fill=NAVY2)
+        fill_w = bar_w * rating / 10 * p
+        if fill_w > bar_h:
+            d.rounded_rectangle([SAFE_L, y_bar, SAFE_L + fill_w, y_bar + bar_h], radius=bar_h // 2, fill=col)
+        for i in range(1, 10):  # tick marks
+            x = SAFE_L + bar_w * i / 10
+            d.line([(x, y_bar + 10), (x, y_bar + bar_h - 10)], fill=(0, 0, 0), width=3)
+        shown = f"{round(rating * p)}/10"
+        d.text((SAFE_L, y_bar + bar_h + 14), shown, font=num_f, fill=col)
+        d.text((SAFE_L + d.textlength("10/10", font=num_f) + 24, y_bar + bar_h + 74), "CREDIBILITY", font=lab_f, fill=GREY)
+        s = ease_back((t - 1.2) / 0.25)
+        if s > 0.02:
+            layer = st.resize((max(int(st.width * (2 - s)), 1), max(int(st.height * (2 - s)), 1)), Image.BILINEAR)
+            paste(fr, layer, SAFE_R - st.width - (layer.width - st.width) / 2,
+                  y_stamp - (layer.height - st.height) / 2, min(1.0, s))
+    return draw
+
+
 SCENES = {
+    "rumour": scene_rumour,
+    "verdict": scene_verdict,
     "punch": scene_punch,
     "headline": scene_headline,
     "stat": scene_stat,

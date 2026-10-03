@@ -303,7 +303,7 @@ if __name__ == "__main__":
     ap.add_argument("--force", action="store_true", help="render despite lint errors")
     a = ap.parse_args()
     with open(a.script) as f:
-        errs, warns = lint.lint(json.load(f))
+        errs, warns = lint.lint(json.load(f), a.script)
     for w in warns:
         print("lint warning:", w, file=sys.stderr)
     for e in errs:

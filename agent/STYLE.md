@@ -7,20 +7,23 @@ The audience is UK football fans scrolling TikTok. They give you about 2 seconds
 - **9–13 segments.** Each segment is 1–2 sentences and gets its own graphic, so the picture changes every 3–7 s. A segment over ~25 words means one graphic sits too long; split it.
 - Sentences of 6–14 words, one fact per sentence. Use contractions.
 
-## Structure
-1. **Hook (segment 1, ≤ 15 words).** Lead with today's stakes or the surprise, never a warm-up. Good patterns:
-   - "Manchester City have until Friday to …"
-   - "The Premier League just …"
-   - "Everyone's asking if City get relegated. Here's what the rules actually say."
-   - "One line in today's ruling changes everything."
-   Only use a pattern if it's true today.
-2. **Open loop (segment 2).** Promise a payoff: "And today we found out how they plan to fight it."
-3. **Quick recap (1 segment).** One line for new viewers: "Quick recap. On 29 September an independent commission found City broke the rules on 114 of 115 charges."
-4. **Today's news (3–6 segments).** Name the source aloud ("Sky Sports reports …"). Use a `punch` card ("THE TWIST", "BUT…") before the key turn.
-5. **What it means / what's next (1–2 segments).**
-6. **Engagement + CTA (last segment).** Ask an opinion question with real options ("A fine, a points deduction, or something bigger?"), then "follow for tomorrow's update."
+## Structure: rumour hook → new news → rumour payoff
+Every episode is built to keep viewers to the end: open on a rumour, deliver today's news, and only settle the rumour in the last 15 seconds.
 
-**Quiet day (no real new development):** never invent news. Make it an explainer from the backlog in `case/case-file.md`. Open with "No ruling today, so here's the one thing you need to understand about …". Still give it a Day number.
+1. **Rumour hook (segment 1, ≤ 15 words, visual `rumour`).** The juiciest *unconfirmed* claim from the last 36 hours: a tabloid scoop, an X "EXCL", a single-outlet report. Name who's saying it, out loud and on the card: "The Mirror claims Pep could walk back into City if the appeal fails." A question works too: "Is Haaland really leaving over the verdict?"
+   - It must be a real, published claim. Never invent or exaggerate one.
+   - The narrator never endorses it. Attribute it ("X claims", "reports suggest") and keep the legal wording below.
+2. **Open loop (segment 2).** Promise the payoff: "We'll tell you how much of that holds up at the end. First, what actually happened today."
+3. **Today's news (5–8 segments).** Only things that are **new since yesterday's episode**. Name the source aloud ("Sky Sports reports …"). Use a `punch` card ("THE TWIST", "BUT…") before the key turn.
+4. **What's next (1 segment).** The next date or decision to watch.
+5. **Rumour check (1–2 segments, visual `verdict`).** Come back to the opening rumour with the details: who else is reporting it, what's confirmed, what's been denied, and a 0–10 credibility rating with a one-word verdict (`confirmed` / `developing` / `shaky` / `denied`). "Rumour check: only Metro and an X account have it. Nobody at City has commented. Two out of ten."
+6. **Engagement + CTA (last segment).** Ask an opinion question about today's news or the rumour ("Would you want Pep back? Comment below."), then "follow for tomorrow's update."
+
+**No recaps.** Don't spend a segment re-explaining the case: no "Quick recap…", no re-listing the verdict, the 115 charges or the £-figures that earlier episodes covered. Regular viewers have seen it, and it's the part they scroll past. If a new fact needs context, give it as a half-sentence inside the news line ("…City, who are appealing the commission's ruling, …"). Check the last 3 episodes' scripts; a fact they already led with can only appear as that kind of half-sentence.
+
+**No rumour worth using?** Open with the most surprising new detail of the day as a question ("Why is Man United suddenly counting its losses?") and answer it in the closing segments instead. Same shape, still no recap.
+
+**Quiet day (nothing new and verified):** never invent news. Lead with the best rumour of the day if there is one, then make the middle an explainer on one open question from `case/case-file.md` that previous episodes haven't covered. Still give it a Day number.
 
 ## Legal wording: non-negotiable
 The case is under appeal. Write every claim so it would survive a lawyer reading it.
@@ -35,7 +38,7 @@ The case is under appeal. Write every claim so it would survive a lawyer reading
 | "Breaking" when it isn't | Use `"urgent": false` on the kicker |
 
 - "Guilty" is fine only when attributed: "the Premier League says City were found guilty …".
-- Across each week, the viewer must hear that City deny wrongdoing and that the punishment is still pending. Include both in every episode until either changes.
+- Every episode must still say, once and briefly, that City deny wrongdoing / are appealing and that the punishment is still pending. Do it as a half-sentence inside a news line, not as a recap segment.
 - Opinion must be labelled ("Pundits argue …", "Kieran Maguire thinks …"). The narrator has no opinion of their own.
 - A new fact needs **two independent outlets**, or it gets attributed to the one outlet that reported it ("The Times reports …").
 - Never voice-clone or imitate a real person.
@@ -43,7 +46,9 @@ The case is under appeal. Write every claim so it would survive a lawyer reading
 ## Visuals: pick the graphic that SHOWS the sentence
 | Type | Use for |
 |---|---|
-| `headline` | hook, statements, "why it matters" |
+| `rumour` | segment 1 only: the claim, `outlet`, and an UNCONFIRMED stamp |
+| `verdict` | the rumour check near the end: claim, `rating` 0–10, `word` |
+| `headline` | statements, "why it matters" |
 | `punch` | 1–3 word pattern interrupt: "THE TWIST", "BUT…", "FRIDAY" |
 | `stat` | any number: charges, £, points, days |
 | `versus` | two sides: City vs Premier League, commission vs appeal |
@@ -53,8 +58,8 @@ The case is under appeal. Write every claim so it would survive a lawyer reading
 | `broll` | licensed footage from `library/broll/`; falls back to a headline if there's none |
 
 Rules:
-- Use at least one `stat` and one `punch` per episode.
-- Don't open with the same visual type two days running (check yesterday's script).
+- Use one `rumour` (segment 1), one `verdict` (in the last 3 segments), and at least one `stat` and one `punch` per episode.
+- Every episode opens on the `rumour` card, so vary the *second* segment's visual from yesterday's instead.
 - No club crests, logos, Premier League footage or screenshots of articles. The graphics are ours, and that's what keeps the account "original" in TikTok's eyes.
 - **Photos of real people only from `library/photos/`** (public domain or CC licences that allow commercial use, each with a licence record). Use `"image": "photos/<file>"`; the renderer adds the "Photo: …" credit and puts the face beside the headline.
   - A person appears only while the narration names them or is about them. Never put someone behind a line about breaches they aren't personally accused of (no Pep behind "114 of 115 charges").

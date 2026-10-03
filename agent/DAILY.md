@@ -13,7 +13,7 @@ It installs Python deps and the Kokoro voice model into `models/`. ffmpeg is alr
 ## 2. Catch up
 - `case/case-file.md`: where the case stands, with sources.
 - The top ~7 lines of `case/log.md`: what recent episodes covered.
-- Yesterday's `episodes/<date>/script.json`: so you don't repeat its hook or opening visual.
+- The last 3 episodes' `script.json`: note every fact they already covered. Those facts don't get their own segment again (see "No recaps" in STYLE.md), and don't reuse a rumour they already checked unless it has moved on.
 - **Day number** = days since 28 Sep 2026 (29 Sep 2026 = Day 1). Use UK date.
 
 ## 3. Research the last ~36 hours
@@ -25,6 +25,8 @@ Run several WebSearch queries in parallel with `mode: "extended"`. For example:
 - Plus a query for each open question in the case file.
 
 WebFetch is blocked for most news sites in this environment, so work from search summaries and cross-check them. A fact needs **two independent outlets**, or it gets attributed to the one that reported it. Prefer: BBC, Sky Sports, The Athletic, The Guardian, The Times, ESPN, Reuters, PA, official PL or City statements. Treat fan sites and aggregators (CaughtOffside, Football365, readmancity) as leads, not sources.
+
+While researching, collect **today's rumours** too: tabloid scoops, X "EXCL"s, single-outlet claims (Mirror, Sun, Daily Mail, Metro, Football Insider, talkSPORT, X). Pick the one viewers will most want resolved for the `rumour` hook, then research it properly (who else carries it, any denial) for the rumour check at the end. Pepstein's daily brief at `~/Dev/pepstein/reports/<date>.md` has a ready-made "Rumour mill" section when it's available locally.
 
 Decide which kind of day it is:
 - **News day:** something new and verified happened. Build the episode around it.

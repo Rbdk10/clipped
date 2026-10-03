@@ -3,6 +3,7 @@
     python -m render.lint episodes/2026-10-01/script.json
 """
 import json
+import os
 import re
 import sys
 
@@ -23,7 +24,28 @@ BANNED = [
 ]
 
 
-def lint(script):
+RECAP = r"\b(quick )?recap\b|\bto recap\b|\bas a reminder\b|\bin case you missed\b|\bif you'?re new\b"
+
+
+def _words(text):
+    return {w for w in re.findall(r"[a-z0-9£']+", text.lower()) if len(w) > 3}
+
+
+def previous_lines(path, n=3):
+    """Narration lines from the last n episodes before this one (by folder name)."""
+    if not path:
+        return []
+    here = os.path.dirname(os.path.abspath(path))
+    root, me = os.path.dirname(here), os.path.basename(here)
+    older = sorted(d for d in os.listdir(root) if d < me and os.path.isfile(os.path.join(root, d, "script.json")))
+    out = []
+    for d in older[-n:]:
+        with open(os.path.join(root, d, "script.json")) as f:
+            out += [(d, s.get("say", "")) for s in json.load(f).get("segments", [])]
+    return out
+
+
+def lint(script, path=None):
     errors, warnings = [], []
     segs = script.get("segments", [])
     for key in ("date", "day", "segments", "caption", "hashtags", "sources"):
@@ -62,6 +84,34 @@ def lint(script):
             errors.append(f"segment {i}: 'guilty' must be attributed")
     if segs and len(segs[0].get("say", "").split()) > 18:
         warnings.append("hook is over 18 words")
+
+    # Shape: rumour hook -> new news -> rumour check. No recap segments.
+    rumour = script.get("rumour")
+    if rumour:
+        if types[:1] != ["rumour"]:
+            errors.append("segment 1 must be the 'rumour' visual (the hook)")
+        outlet = (rumour.get("outlet") or segs[0].get("visual", {}).get("outlet") or "") if segs else ""
+        first = outlet.split("/")[0].strip().lower()
+        if segs and first and first not in segs[0].get("say", "").lower():
+            errors.append(f"hook must name who's claiming it aloud ({outlet!r}); the narrator never asserts a rumour")
+        if "verdict" not in types[-3:]:
+            errors.append("the rumour check ('verdict' visual) must be in the last 3 segments")
+    else:
+        warnings.append("no 'rumour' in the script: open on a rumour unless there genuinely isn't one today")
+        if segs and "?" not in segs[0].get("say", ""):
+            warnings.append("without a rumour, open on a question the ending answers")
+    for i, s in enumerate(segs, 1):
+        if re.search(RECAP, s.get("say", ""), re.I):
+            errors.append(f"segment {i}: recap segment; regulars have seen it, so give context as a half-sentence instead")
+    for i, s in enumerate(segs[1:], 2):  # segment 1 may follow up a running rumour
+        mine = _words(s.get("say", ""))
+        if len(mine) < 4:
+            continue
+        for ep, line in previous_lines(path):
+            theirs = _words(line)
+            if theirs and len(mine & theirs) / len(mine | theirs) >= 0.5:
+                warnings.append(f"segment {i} repeats {ep}: \"{line[:60]}...\"; only new news gets a segment")
+                break
     for need in ("stat", "punch"):
         if need not in types:
             warnings.append(f"no '{need}' visual")
@@ -78,7 +128,7 @@ def lint(script):
 
 if __name__ == "__main__":
     with open(sys.argv[1]) as f:
-        e, w = lint(json.load(f))
+        e, w = lint(json.load(f), sys.argv[1])
     for x in w:
         print("warning:", x)
     for x in e:
