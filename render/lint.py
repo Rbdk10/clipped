@@ -83,7 +83,7 @@ def lint(script, path=None):
                 r"\b(premier league|commission|panel|found|says|ruled|according)\b", s.get("say", ""), re.I):
             errors.append(f"segment {i}: 'guilty' must be attributed")
 
-    # Shape: rumour hook -> new news -> rumour check. No recap segments.
+    # Shape: intro -> facts -> teased stories, rumour + verdict last. No recaps.
     rumour = script.get("rumour")
     if segs:
         intro = segs[0]
@@ -95,25 +95,23 @@ def lint(script, path=None):
         if not re.search(r"all in this video|in this video", intro.get("say", ""), re.I):
             warnings.append("intro should end with 'and more. It's all in this video.'")
     if rumour:
-        if types[1:2] != ["rumour"]:
-            errors.append("segment 2 must be the 'rumour' visual")
-        say2 = segs[1].get("say", "") if len(segs) > 1 else ""
-        if not re.search(r"\b(might|could|may|reportedly|rumou?r)\b", say2, re.I):
-            errors.append("the rumour must be hedged ('might', 'could'); the narrator never states it as fact")
-        if re.search(r"\b(claims?|according to|reports say)\b", say2, re.I):
-            errors.append("keep outlets and 'claims' out of the rumour line; they go on the card and in the rumour check")
-        if not (segs[1].get("visual", {}).get("outlet") if len(segs) > 1 else None):
+        if "rumour" not in types[-5:] or "verdict" not in types[-3:]:
+            errors.append("the rumour closes the episode: a 'rumour' card in the last 5 segments, then a 'verdict' in the last 3")
+        elif types.index("rumour") > len(types) - 1 - types[::-1].index("verdict"):
+            errors.append("the 'rumour' card must come before the 'verdict'")
+        ri = types.index("rumour")
+        if not re.search(r"\b(might|could|may|reportedly|rumou?rs?|claims?|reports?)\b", segs[ri].get("say", ""), re.I):
+            errors.append("the rumour line must be hedged ('might', 'could') or attributed; never state it as fact")
+        if not segs[ri].get("visual", {}).get("outlet"):
             errors.append("the rumour card needs an 'outlet'")
-        if "verdict" not in types[-3:]:
-            errors.append("the rumour check ('verdict' visual) must be in the last 3 segments")
     else:
-        warnings.append("no 'rumour' in the script: open on a rumour unless there genuinely isn't one today")
-        if segs and "?" not in segs[0].get("say", ""):
-            warnings.append("without a rumour, open on a question the ending answers")
+        warnings.append("no 'rumour' in the script: close on one unless there genuinely isn't one today")
+    if len(segs) > 1 and re.search(r"\bfirst up\b|\bis it true\b|\bwe'?ll tell you at the end\b", segs[1].get("say", ""), re.I):
+        errors.append("segment 2 goes straight into the facts: no 'first up' / 'is it true?' after the intro")
     for i, s in enumerate(segs, 1):
         if re.search(RECAP, s.get("say", ""), re.I):
             errors.append(f"segment {i}: recap segment; regulars have seen it, so give context as a half-sentence instead")
-    for i, s in enumerate(segs[2:], 3):  # intro and rumour may echo a running story
+    for i, s in enumerate(segs[1:], 2):  # the intro may echo a running story
         mine = _words(s.get("say", ""))
         if len(mine) < 4:
             continue

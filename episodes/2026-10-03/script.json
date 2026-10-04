@@ -2,7 +2,7 @@
   "date": "2026-10-03",
   "day": 5,
   "series": "The City Case",
-  "title": "Haaland might leave, and Abu Dhabi fires a warning shot",
+  "title": "Abu Dhabi's warning shot, United count the cost, and Haaland",
   "rumour": {
     "claim": "Haaland won't stay if City are relegated",
     "outlet": "TEAMtalk",
@@ -24,15 +24,6 @@
           "Abu Dhabi's warning"
         ],
         "step": 1.3
-      }
-    },
-    {
-      "say": "First up: Erling Haaland might be leaving City. Is it true? We'll tell you at the end.",
-      "image": "photos/erling-haaland-2023.jpg",
-      "visual": {
-        "type": "rumour",
-        "text": "Haaland might be leaving",
-        "outlet": "TEAMtalk"
       }
     },
     {
@@ -71,7 +62,31 @@
       "source": "GB News, Goal, 2 Oct"
     },
     {
-      "say": "Then City's own sponsor lawyered up against the Premier League, hiring Quinn Emanuel, the world's most feared law firm.",
+      "say": "And Pep Guardiola is coming back, for the PSG game at the Etihad on 14 October.",
+      "image": "photos/pep-guardiola-2021.jpg",
+      "visual": {
+        "type": "headline",
+        "kicker": "Pep's back",
+        "urgent": false,
+        "text": "One night only"
+      },
+      "source": "Goal, Yahoo Sports, 2 Oct"
+    },
+    {
+      "say": "City deny wrongdoing, but the punishment is still coming, and nobody knows when.",
+      "image": "photos/premier-league-hq-brunel-building-2021.jpg",
+      "visual": {
+        "type": "list",
+        "title": "Still to come",
+        "items": [
+          "Sanction hearing: no date",
+          "City's appeal: no date",
+          "Pep at the Etihad: 14 Oct"
+        ]
+      }
+    },
+    {
+      "say": "Now the big ones. City's own sponsor has lawyered up against the Premier League, hiring Quinn Emanuel, the world's most feared law firm.",
       "image": "photos/etihad-787-landing-toronto-1.jpg",
       "visual": {
         "type": "headline",
@@ -102,31 +117,16 @@
       "source": "Express, 3 Oct"
     },
     {
-      "say": "And Pep Guardiola is coming back, for the PSG game on 14 October.",
-      "image": "photos/pep-guardiola-2021.jpg",
+      "say": "And finally, Haaland. TEAMtalk claims he might walk out if City get relegated.",
+      "image": "photos/erling-haaland-2023.jpg",
       "visual": {
-        "type": "headline",
-        "kicker": "Pep's back",
-        "urgent": false,
-        "text": "One night only"
-      },
-      "source": "Goal, Yahoo Sports, 2 Oct"
-    },
-    {
-      "say": "City deny wrongdoing, but the punishment is still coming, and nobody knows when.",
-      "image": "photos/premier-league-hq-brunel-building-2021.jpg",
-      "visual": {
-        "type": "list",
-        "title": "Still to come",
-        "items": [
-          "Sanction hearing: no date",
-          "City's appeal: no date",
-          "Pep at the Etihad: 14 Oct"
-        ]
+        "type": "rumour",
+        "text": "Haaland might be leaving",
+        "outlet": "TEAMtalk"
       }
     },
     {
-      "say": "So, Haaland. TEAMtalk claims he'd go if City are relegated. But The Sun says his contract to 2034 has no relegation clause.",
+      "say": "But his contract runs to 2034, and The Sun says there's no relegation clause.",
       "image": "photos/erling-haaland-2023.jpg",
       "visual": {
         "type": "verdict",

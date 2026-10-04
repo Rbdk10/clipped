@@ -7,17 +7,17 @@ The audience is UK football fans scrolling TikTok. They give you about 2 seconds
 - **9–13 segments.** Each segment is 1–2 sentences and gets its own graphic, so the picture changes every 3–7 s. A segment over ~25 words means one graphic sits too long; split it.
 - Sentences of 6–14 words, one fact per sentence. Use contractions.
 
-## Structure: rumour hook → new news → rumour payoff
-Every episode is built to keep viewers to the end: a rundown intro, the rumour as a stakes line, today's news, and the rumour settled only in the last 15 seconds.
+## Structure: intro → facts → the teased stories, best last
+Every episode is built to keep viewers to the end: tease the big stories up front, then make them wait for them.
 
-1. **The intro (segment 1, 15–25 words, visual `list` with `"title": "In this video"` and `"step": 1.3`).** A fast rundown of the 3 biggest things in the episode, each sold as stakes, ending "and more. It's all in this video." Example: "Haaland's future, Man United counting what City's titles cost them, Etihad hiring the world's most feared law firm, and more. It's all in this video." Card items are the 2–5 word versions ("Haaland's future", "United count the cost", "Etihad lawyers up"). Same "sold and true" rule as every other line: tease what the episode actually says.
-2. **The rumour (segment 2, visual `rumour`).** "First up: Erling Haaland might be leaving City. Is it true? We'll tell you at the end." Hedged with "might / could", no outlet names in the voiceover; the outlet goes on the card (`"outlet"`). The rumour check at the end is where it gets sourced and rated.
-   - No rumour today? Use the day's biggest question instead ("First up: could City really be expelled?") and answer it at the end.
-   - It must be a real, published claim. Never invent or exaggerate one, and never drop the "might / could".
-3. **Today's news (5–8 segments).** Only things that are **new since yesterday's episode**. Name the source aloud ("Sky Sports reports …"). Use a `punch` card ("THE TWIST", "BUT…") before the key turn.
-4. **What's next (1 segment).** The next date or decision to watch.
-5. **Rumour check (1–2 segments, visual `verdict`).** Come back to the opening rumour with the details: who else is reporting it, what's confirmed, what's been denied, and a 0–10 credibility rating with a one-word verdict (`confirmed` / `developing` / `shaky` / `denied`). "Rumour check: only Metro and an X account have it. Nobody at City has commented. Two out of ten."
-6. **Engagement + CTA (last segment).** Ask an opinion question about today's news or the rumour ("Would you want Pep back? Comment below."), then "follow for tomorrow's update."
+1. **The intro (segment 1, 15–25 words, visual `list` with `"title": "In this video"` and `"step": 1.3`).** A fast rundown of the 3 biggest things in the episode, each sold as stakes, ending "and more. It's all in this video." Example: "Haaland's future, Man United counting what City's titles cost them, Etihad hiring the world's most feared law firm, and more. It's all in this video." Card items are the 2–5 word versions ("Haaland's future", "United count the cost", "Etihad lawyers up").
+2. **Straight into the facts (segment 2 on).** No "first up", no "is it true?", no re-stating the teasers. Start with the day's *other* verified news (the "and more"), name sources aloud, use a `punch` card ("THE TWIST", "BUT…") before a key turn.
+3. **The teased stories, building to the best (the back half).** Cover the intro's items in rising order of interest, saving the biggest for last. "What's next" goes before them, not at the very end.
+4. **The rumour, last (final 2–3 segments).** If the best teaser is a rumour, it closes the episode: a `rumour` card with the claim, hedged ("… might be leaving"), then a `verdict` card that sources it, says what's confirmed or denied, and gives a 0–10 rating with a one-word verdict (`confirmed` / `developing` / `shaky` / `denied`).
+   - It must be a real, published claim. Never invent or exaggerate one, and never state it as fact.
+5. **Engagement + CTA (last segment).** An opinion question about the closing story ("Would Haaland really walk? Comment below."), then "follow for tomorrow's update."
+
+**No rumour today?** Same shape: the intro teases the three biggest verified stories and the biggest one closes the episode.
 
 **Sell every line.** Lead each news segment with the consequence or the conflict, in active verbs, then the detail. Spice comes from framing, never from facts the report doesn't contain.
 | Boring | Invented (never) | Sold and true |
@@ -54,7 +54,7 @@ The case is under appeal. Write every claim so it would survive a lawyer reading
 ## Visuals: pick the graphic that SHOWS the sentence
 | Type | Use for |
 |---|---|
-| `rumour` | segment 2: the claim, `outlet` on the card, and an UNCONFIRMED stamp |
+| `rumour` | near the end: the claim, `outlet` on the card, and an UNCONFIRMED stamp |
 | `verdict` | the rumour check near the end: claim, `rating` 0–10, `word` |
 | `headline` | statements, "why it matters" |
 | `punch` | 1–3 word pattern interrupt: "THE TWIST", "BUT…", "FRIDAY" |
@@ -66,8 +66,8 @@ The case is under appeal. Write every claim so it would survive a lawyer reading
 | `broll` | licensed footage from `library/broll/`; falls back to a headline if there's none |
 
 Rules:
-- Use the `list` intro (segment 1), one `rumour` (segment 2), one `verdict` (in the last 3 segments), and at least one `stat` and one `punch` per episode.
-- Every episode opens on the intro list then the `rumour` card; vary the background images from yesterday's.
+- Use the `list` intro (segment 1), the `rumour` then `verdict` cards to close (if there's a rumour), and at least one `stat` and one `punch` per episode.
+- Every episode opens on the intro list; vary its background image and segment 2's visual from yesterday's.
 - No club crests, logos, Premier League footage or screenshots of articles. The graphics are ours, and that's what keeps the account "original" in TikTok's eyes.
 - **Photos of real people only from `library/photos/`** (public domain or CC licences that allow commercial use, each with a licence record). Use `"image": "photos/<file>"`; the renderer adds the "Photo: …" credit and puts the face beside the headline.
   - A person appears only while the narration names them or is about them. Never put someone behind a line about breaches they aren't personally accused of (no Pep behind "114 of 115 charges").
