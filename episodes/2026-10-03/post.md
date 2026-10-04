@@ -1,10 +1,10 @@
-# Day 5: Haaland might leave, and Abu Dhabi fires a warning shot
+# Day 5: Abu Dhabi's warning shot, United count the cost, and Haaland
 
-_2026-10-03 · 76s video_
+_2026-10-03 · 70s video_
 
 ## Today's update
 
-Haaland's future, Man United counting what City's titles cost them, Etihad hiring the world's most feared law firm, and more. It's all in this video. First up: Erling Haaland might be leaving City. Is it true? We'll tell you at the end. Abu Dhabi has fired a warning shot at Britain: punish City hard, and the investment could dry up. That's over £30bn pumped into the UK in five years. And City's chairman met a cabinet minister two weeks before the verdict. Then City's own sponsor lawyered up against the Premier League, hiring Quinn Emanuel, the world's most feared law firm. But here's the twist. Manchester United want to know what City cost them. According to the Express, United have started adding up the damage, and the 2012 title is on the list. And Pep Guardiola is coming back, for the PSG game on 14 October. City deny wrongdoing, but the punishment is still coming, and nobody knows when. So, Haaland. TEAMtalk claims he'd go if City are relegated. But The Sun says his contract to 2034 has no relegation clause. A legal expert says players might break contracts, but Haaland's camp is silent. Three out of ten. Would Haaland really walk? Comment below, and follow for tomorrow's update.
+Haaland's future, Man United counting what City's titles cost them, Etihad hiring the world's most feared law firm, and more. It's all in this video. Abu Dhabi has fired a warning shot at Britain: punish City hard, and the investment could dry up. That's over £30bn pumped into the UK in five years. And City's chairman met a cabinet minister two weeks before the verdict. And Pep Guardiola is coming back, for the PSG game on 14 October. City deny wrongdoing, but the punishment is still coming, and nobody knows when. Then City's own sponsor lawyered up against the Premier League, hiring Quinn Emanuel, the world's most feared law firm. But here's the twist. Manchester United want to know what City cost them. According to the Express, United have started adding up the damage, and the 2012 title is on the list. Erling Haaland might be leaving Manchester City. Rumour check on Haaland. His contract runs to 2034, and The Sun reports there's no relegation clause. A legal expert says players might break contracts, but Haaland's camp is silent. Three out of ten. Would Haaland really walk? Comment below, and follow for tomorrow's update.
 
 ## Caption (paste into TikTok)
 

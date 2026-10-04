@@ -45,6 +45,7 @@ python3 -m render.render episodes/<date>/script.json
 ```
 This writes `video.mp4`, `frames.jpg` (one frame per segment) and `post.md`. It prints the duration.
 
+- **Re-cuts cost credits only for changed lines.** ElevenLabs audio is cached per line by its exact wording (`episodes/<date>/voice/`). When reordering or fixing a script, keep unchanged lines word-for-word, and prefer an already-recorded wording over a new one.
 - **Voice:** the output's `"voice"` field says `elevenlabs` or `kokoro`. If it fell back to Kokoro, say so in your report.
 - **Duration under 61 s:** add a sentence, then re-render. **Over 80 s:** trim.
 - **Look at `frames.jpg` with the Read tool:** check for text cut off, overlapping, or off-screen. Fix the script (shorter on-screen text) and re-render if anything is wrong.

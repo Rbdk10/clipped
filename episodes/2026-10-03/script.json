@@ -62,7 +62,7 @@
       "source": "GB News, Goal, 2 Oct"
     },
     {
-      "say": "And Pep Guardiola is coming back, for the PSG game at the Etihad on 14 October.",
+      "say": "And Pep Guardiola is coming back, for the PSG game on 14 October.",
       "image": "photos/pep-guardiola-2021.jpg",
       "visual": {
         "type": "headline",
@@ -86,7 +86,7 @@
       }
     },
     {
-      "say": "Now the big ones. City's own sponsor has lawyered up against the Premier League, hiring Quinn Emanuel, the world's most feared law firm.",
+      "say": "Then City's own sponsor lawyered up against the Premier League, hiring Quinn Emanuel, the world's most feared law firm.",
       "image": "photos/etihad-787-landing-toronto-1.jpg",
       "visual": {
         "type": "headline",
@@ -117,7 +117,7 @@
       "source": "Express, 3 Oct"
     },
     {
-      "say": "And finally, Haaland. TEAMtalk claims he might walk out if City get relegated.",
+      "say": "Erling Haaland might be leaving Manchester City.",
       "image": "photos/erling-haaland-2023.jpg",
       "visual": {
         "type": "rumour",
@@ -126,7 +126,7 @@
       }
     },
     {
-      "say": "But his contract runs to 2034, and The Sun says there's no relegation clause.",
+      "say": "Rumour check on Haaland. His contract runs to 2034, and The Sun reports there's no relegation clause.",
       "image": "photos/erling-haaland-2023.jpg",
       "visual": {
         "type": "verdict",
